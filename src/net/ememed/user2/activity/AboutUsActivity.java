@@ -25,7 +25,6 @@ public class AboutUsActivity extends BasicActivity {
 	
 	public void doClick(View view) {
 		if(view.getId() == R.id.btn_back){
-		int i=0;
 			finish();
 		} 
 	}
