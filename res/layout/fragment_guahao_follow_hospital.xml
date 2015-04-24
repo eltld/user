@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <net.ememed.user2.widget.RefreshListView
+        android:id="@+id/ptr_listview"
+        style="@style/listview_style"
+        android:layout_height="match_parent" >
+    </net.ememed.user2.widget.RefreshListView>
+
+    <include
+        layout="@layout/fragment_guahao_no_data"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/u_net_unavailable"
+        android:visibility="gone" />
+
+</LinearLayout>

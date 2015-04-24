@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+<!--  
+    <uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout
+        android:id="@+id/ptr_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center" >
+-->
+        <net.ememed.user2.widget.RefreshListView
+            android:id="@+id/ptr_listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include
+            layout="@layout/u_empty_view"
+            android:visibility="gone" />
+
+        <include
+            layout="@layout/u_net_unavailable"
+            android:visibility="gone" />
+   <!--  </uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout>-->
+    
+</LinearLayout>

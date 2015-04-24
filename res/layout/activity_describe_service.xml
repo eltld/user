@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/fl_top_title"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/topbg_green_round"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/top_title"
+            style="@style/text"
+            android:layout_width="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ffffff" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_presentation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="#88000000" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:text="温馨提示： "
+                android:textColor="@color/red" />
+
+            <LinearLayout
+                android:id="@+id/ll_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆任何程度的网上图文咨询，均不能替代医生的临床诊疗！"
+                    android:textColor="#88000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆该服务的有效期限为服务首次发起后的48小时内！"
+                    android:textColor="#88000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆如有任何疑问，欢迎您在服务时间致电薏米网客服：400-900-3333 "
+                    android:textColor="#88000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆任何程度的网上电话语音及附助图文咨询均不能替代医生的临床诊疗！"
+                    android:textColor="#88000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆成功购买您选定的目标医生“预约通话”服务后，系统将开放用户与医生之间的实时专业聊天功能，您可以与医生就具体服务需求聊天并约定合适的通话时间。预约成功后，您需要提醒目标医生在手机客户端设置通话的时间，通话时间设置完成后，薏米助理将及时协调接通您与医生的实时通话。 "
+                    android:textColor="#88000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆如有任何疑问，欢迎您在服务时间致电薏米网客服：400-900-3333  "
+                    android:textColor="#88000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_private_doctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆服务购买成功后，您可以在约定有效服务期限内无限次与医生进行及时、充分的聊天沟通或更多线下临床诊疗预约。 "
+                    android:textColor="#88000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆当您需要与签约购买的目标私人医生进行预约通话服务时，须及时提醒医生在手机客户端设置可实时通话的具体时间段 "
+                    android:textColor="#88000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆如有任何疑问，欢迎您在服务时间致电薏米网客服：400-900-3333  "
+                    android:textColor="#88000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_xianxia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆提交申请后，您可以与选定目标医生沟通相关事宜，包括时间、上门地点、各类费用等。 "
+                    android:textColor="#88000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆该服务由医生设定具体费用标准，您需要预先支付费用后再接受医生服务。 "
+                    android:textColor="#88000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆服务完成后，为帮助我们改进服务质量，敬请及时给予服务评价。   "
+                    android:textColor="#88000000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="☆如有任何疑问，欢迎您在服务时间致电薏米网客服：400-900-3333  "
+                    android:textColor="#88000000" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:background="@drawable/bottom_round_bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_free_consult"
+            android:minWidth="30dp"
+            android:onClick="doClick"
+            android:text="关闭"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/bt_free_consult"
+            android:minWidth="30dp"
+            android:onClick="doClick"
+            android:text="购买"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</LinearLayout>

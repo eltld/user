@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/top_bar_doctor_green" />
+
+    <net.ememed.user2.widget.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/iv_portrait"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/bar_title"
+        android:layout_marginBottom="24dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/default3_doctor"
+        app:border_color="@android:color/transparent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_portrait"
+        android:layout_marginBottom="8dp"
+        android:layout_toRightOf="@id/iv_portrait"
+        android:text="医生" />
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_name"
+        android:layout_below="@id/tv_name"
+        android:layout_marginRight="12dp"
+        android:text="如果你想继续获得我的帮助，您可以关注我！" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_portrait"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp" >
+
+        <Button
+            android:id="@+id/btn_information"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="doClick"
+            android:text="查看我的资料"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_follow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="doClick"
+            android:text="关注"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

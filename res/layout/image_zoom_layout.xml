@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_image"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:onClick="doClick" >
+
+    <net.ememed.user2.medicalhistory.activity.view.ImageZoomView
+        android:id="@+id/zoomView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:layout_centerInParent="true" >
+    </net.ememed.user2.medicalhistory.activity.view.ImageZoomView>
+
+</RelativeLayout>

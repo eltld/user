@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/reseda"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal" 
+        android:baselineAligned="false">
+
+       <LinearLayout
+            android:id="@+id/ll_frag_title_doctor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/doctor_navigation"
+            android:onClick="pageChange"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_attention_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_guahao_attention_doctor"
+                android:textColor="@color/frag_title_text_color" />
+
+          
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_frag_title_hospital"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/doctor_navigation"
+            android:onClick="pageChange"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_attention_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/new_guahao_attention_hospital"
+            	android:textColor="@color/frag_title_text_color" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <com.viewpagerindicator.CustomViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </com.viewpagerindicator.CustomViewPager>
+
+</LinearLayout>

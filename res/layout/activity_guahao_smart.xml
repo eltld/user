@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/bar_title" />
+
+    <RelativeLayout
+        android:layout_width="260dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shape_guahao_smart_bg_green"
+        android:onClick="online"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/iv_icon1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:src="@drawable/ic_guahao_smart_question" />
+
+        <TextView
+            android:id="@+id/tv_subject1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/iv_icon1"
+            android:text="线上问诊"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_desc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_subject1"
+            android:layout_below="@+id/tv_subject1"
+            android:text="在线提问，专业医生免费回答"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="260dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/shape_guahao_smart_bg_blue"
+        android:onClick="check"
+        android:gravity="center_vertical" >
+
+        <ImageView
+            android:id="@+id/iv_icon2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:src="@drawable/ic_guahao_smart_search" />
+
+        <TextView
+            android:id="@+id/tv_subject2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_toRightOf="@+id/iv_icon2"
+            android:text="症状自查"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_desc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_subject2"
+            android:layout_below="@+id/tv_subject2"
+            android:text="根据身体部位及症状自查疾病"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#dbdbdb"
+        android:gravity="center_vertical"
+        android:paddingLeft="9dp"
+        android:text="温馨提示"
+        android:textSize="14sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:lineSpacingExtra="11dp"
+        android:paddingBottom="22dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="22dp"
+        android:text="1、症状自查，为您提供常见的症状问答自测和就诊建议服务\n2、线上问诊，为您贴心提供专业的预约导诊服务，权威医生任您问，再也不用担心挂错号"
+        android:textColor="#666666"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#cecece" />
+
+</LinearLayout>

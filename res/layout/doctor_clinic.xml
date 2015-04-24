@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+
+    <ScrollView
+        android:id="@+id/doctor_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f0f0f0"
+        android:fadingEdge="vertical"
+        android:overScrollMode="never"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:id="@+id/doctor_clinic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/doctor_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/doctor_clinic_bg"
+                android:clickable="true"
+                android:onClick="doClick" >
+
+                <LinearLayout
+                    android:id="@+id/contact_image"
+                    android:layout_width="80dp"
+                    android:layout_height="110dp"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="doClick"
+                    android:orientation="vertical" >
+
+                    <net.ememed.user2.widget.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/doctor_head_portrait"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/default3_doctor"
+                        app:border_color="@android:color/transparent" />
+
+                    <CheckBox
+                        android:id="@+id/follow"
+                        android:layout_width="40dp"
+                        android:layout_height="11dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/follow_bg"
+                        android:button="@android:color/transparent"
+                        android:enabled="false" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/contact_image"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_doctor_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:maxWidth="80dp"
+                            android:singleLine="true"
+                            android:text="林海医生"
+                            android:textColor="@android:color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_doctor_alias"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="主治医生"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        
+
+                            <LinearLayout
+                                android:id="@+id/follow_layout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="3dp"
+                                android:layout_marginRight="30dp"
+                                android:background="@drawable/follow_layout_bg"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:layout_gravity="right|center_vertical"
+                                android:orientation="horizontal" >
+
+                                <ImageView
+                                    android:id="@+id/follow_ic"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:layout_marginLeft="3dp"
+                                    android:background="@drawable/xing_ioc" />
+
+                                <TextView
+                                    android:id="@+id/follow_tx"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="3dp"
+                                    android:layout_marginRight="3dp"
+                                    android:text="关注"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/tv_hos_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="#ffffff" />
+
+                        <TextView
+                            android:id="@+id/tv_doctor_quanke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="全科医生"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tv_doctor_zhuanke"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:singleLine="true"
+                            android:text="专科医生"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:singleLine="true"
+                            android:text="@string/satisfaction"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <net.ememed.user2.widget.ColoredRatingBar
+                            android:id="@+id/rtb_service_goods"
+                            style="@style/coloredRatingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp" />
+                        
+                        <LinearLayout 
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginRight="30dp"
+                            android:layout_marginLeft="10dp"
+                            android:gravity="right"
+                            android:orientation="vertical">
+                            
+                            <TextView
+                                android:id="@+id/tv_attention"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="关注："
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:singleLine="true"
+                                />
+                            <TextView 
+                                android:id="@+id/tv_fans"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="粉丝："
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:singleLine="true"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/white_next" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_special"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:padding="10dp" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/search_speciality"
+                    android:textColor="@color/grayness"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_search_speciality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:maxLines="3"
+                    android:singleLine="true"
+                    android:textColor="@color/grayness"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_all_shuoshuo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#dedede"
+                    android:clickable="true"
+                    android:drawableRight="@drawable/pic_right"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="15dp"
+                    android:singleLine="true"
+                    android:text="医生说说"
+                    android:textColor="@color/grayness" />
+					
+                <TextView
+                    android:id="@+id/tv_noshuoshuo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="10dp"
+                    android:visibility="gone"
+                    android:text="暂无说说"
+                    />
+                <net.ememed.user2.widget.ListViewForScrollView
+                    android:id="@+id/say_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white" >
+                </net.ememed.user2.widget.ListViewForScrollView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#dedede"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="15dp"
+                android:singleLine="true"
+                android:text="医生服务"
+                android:textColor="@color/grayness" />
+
+            <LinearLayout
+                android:id="@+id/lt_all_text_consult"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/lt_text_consult"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_ground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:onClick="doClick"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_consult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/clinic_text_consult" />
+
+                    <TextView
+                        android:id="@+id/tv_consult_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="图文咨询"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_consult_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_text_consult_arrows"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/pic_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lt_text_consult_below"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_listview"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="8dp" >
+
+                        <TextView
+                            android:id="@+id/tv_custom_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:singleLine="true"
+                            android:text="通过文字、图片、语音进行咨询"
+                            android:textColor="@color/grayness" />
+
+                        <Button
+                            android:id="@+id/btn_consult"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/bt_free_consult"
+                            android:minWidth="60dp"
+                            android:onClick="doClick"
+                            android:text="@string/search_buy"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btn_consult_desc"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@id/btn_consult"
+                            android:background="@drawable/wenhao"
+                            android:onClick="doClick" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#84CB65" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lt_all_phone_consult"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/lt_phone_consult"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_ground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:onClick="doClick"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_phone_consult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/clinic_phone_consult" />
+
+                    <TextView
+                        android:id="@+id/tv_phone_consult"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="预约通话"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_phone_consult_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center_horizontal"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_phone_arrows"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/pic_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lt_phone_consult_below"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/color_listview"
+                    android:orientation="vertical"
+                    android:visibility="visible" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="8dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:singleLine="true"
+                            android:text="与指定专家直接通话"
+                            android:textColor="@color/grayness" /> <!-- 删除android:id="@+id/tv_custom_date" -->
+
+                        <Button
+                            android:id="@+id/btn_phone_consult"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/bt_free_consult"
+                            android:clickable="true"
+                            android:minWidth="60dp"
+                            android:onClick="doClick"
+                            android:text="@string/search_buy"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btn_phone_consult_desc"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@id/btn_phone_consult"
+                            android:background="@drawable/wenhao"
+                            android:onClick="doClick" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F3664F" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lt_all_shangmen_consult"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+<!-- 
+                <LinearLayout
+                    android:id="@+id/lt_shangmen"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_ground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:onClick="doClick"
+                    android:visibility="gone"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_shangmen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/clinic_shangmen" />
+
+                    <TextView
+                        android:id="@+id/tv_shangmen"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="上门会诊"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_shangmen_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center_horizontal"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_shangmen_arrows"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/pic_down" />
+                </LinearLayout>
+ -->
+                <LinearLayout
+                    android:id="@+id/lt_shangmen_below"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/color_listview"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="8dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:singleLine="true"
+                            android:text="找医生上门帮忙"
+                            android:textColor="@color/grayness" />
+
+                        <Button
+                            android:id="@+id/btn_shangmen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/bt_free_consult"
+                            android:clickable="true"
+                            android:minWidth="60dp"
+                            android:onClick="doClick"
+                            android:text="@string/search_consult"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btn_shangmen_consult_desc"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@id/btn_shangmen"
+                            android:background="@drawable/wenhao"
+                            android:onClick="doClick" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#30C7AF" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lt_all_jiuyi_consult"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/lt_jiuyi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_ground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:onClick="doClick"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_jiuyi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/clinic_jiahao" />
+
+                    <TextView
+                        android:id="@+id/tv_jiuyi"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/home_item_jiuyi"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_jiuyi_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center_horizontal"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_jiuyi_arrows"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/pic_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lt_jiuyi_below"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/color_listview"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="8dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:singleLine="true"
+                            android:text="线下紧急挂号预约专家"
+                            android:textColor="@color/grayness" />
+
+                        <Button
+                            android:id="@+id/btn_jiuyi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/bt_free_consult"
+                            android:clickable="true"
+                            android:minWidth="60dp"
+                            android:onClick="doClick"
+                            android:text="@string/search_consult"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btn_jiuyi_desc"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@id/btn_jiuyi"
+                            android:background="@drawable/wenhao"
+                            android:onClick="doClick" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F3A13C" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lt_all_zhuyuan_consult"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/lt_zhuyuan"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_ground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:onClick="doClick"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_zhuyuan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/clinic_zhuyuan" />
+
+                    <TextView
+                        android:id="@+id/tv_zhuyuan"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/home_item_zhuyuan"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_zhuyuan_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center_horizontal"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_zhuyuan_arrows"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/pic_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lt_zhuyuan_below"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/color_listview"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="8dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:singleLine="true"
+                            android:text="线下住院预约"
+                            android:textColor="@color/grayness" />
+
+                        <Button
+                            android:id="@+id/btn_zhuyuan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/bt_free_consult"
+                            android:clickable="true"
+                            android:minWidth="60dp"
+                            android:onClick="doClick"
+                            android:text="@string/search_consult"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btn_zhuyuan_desc"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@id/btn_zhuyuan"
+                            android:background="@drawable/wenhao"
+                            android:onClick="doClick" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#D0A670" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lt_all_private_doctor_consult"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/lt_private_doctor"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_ground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:onClick="doClick"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_private_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/ic_private_doctor" />
+
+                    <TextView
+                        android:id="@+id/tv_private_doctor"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="签约私人医生"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_private_doctor_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center_horizontal"
+                        android:textColor="@android:color/black"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_private_doctor_arrows"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/pic_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lt_private_doctor_below"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@color/color_listview"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="8dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:singleLine="true"
+                            android:text="签约医生供您不限次咨询"
+                            android:textColor="@color/grayness" />
+
+                        <Button
+                            android:id="@+id/btn_private_doctor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/bt_free_consult"
+                            android:minWidth="60dp"
+                            android:onClick="doClick"
+                            android:text="@string/search_buy"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btn_private_doctor_desc"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@id/btn_private_doctor"
+                            android:background="@drawable/wenhao"
+                            android:onClick="doClick" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#5DA9FF" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lt_all_custom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/lt_custom"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/box_ground"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:onClick="doClick"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_custom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:src="@drawable/clinic_custom" />
+
+                    <TextView
+                        android:id="@+id/tv_custom_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/home_item_custom"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/tv_custom_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:gravity="right|center_horizontal"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <ImageView
+                        android:id="@+id/iv_custom_arrows"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/pic_down" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lt_custom_below"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_listview"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="5dp"
+                        android:paddingTop="8dp" >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="5dp"
+                            android:singleLine="true"
+                            android:text="试试医生还能帮什么忙"
+                            android:textColor="@color/grayness" />
+
+                        <Button
+                            android:id="@+id/btn_custom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/bt_free_consult"
+                            android:clickable="true"
+                            android:minWidth="60dp"
+                            android:onClick="doClick"
+                            android:text="@string/search_consult"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/btn_custom_desc"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toLeftOf="@id/btn_custom"
+                            android:background="@drawable/wenhao"
+                            android:onClick="doClick" />
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#9780E5" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="#00000000" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

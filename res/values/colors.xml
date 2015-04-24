@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="public_bg">#f4f4f4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#333333</color>
+    <color name="main_page_bg">#e9ebec</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#40000000</color>
+    <color name="topbg_green">#00acee</color>
+    <color name="tab_light_gray">#939393</color>
+    <color name="color_listview">#E1E1E1</color>
+    <color name="red">#ff0000</color>
+    <color name="pink">#F08394</color>
+    <color name="gold">#b89766</color>
+    <color name="green">#29969c</color>
+    <color name="bottle_green">#54B76C</color>
+    <color name="gray">#E8E8E8</color>
+    <color name="re_gray">#AAAAAA</color>
+    <color name="re_gray2">#A8A8A8</color>
+    <color name="zi_gray">#a5a5a5</color>
+    <color name="light_gray">#9D9D9D</color>
+    <color name="pressed_gray">#CDCDCD</color>
+    <color name="reseda">#f0f0f0</color>
+    <color name="driver">#e5e5e5</color>
+    <color name="bg_gray">#ECEEEB</color>
+    <color name="huise">#6c6c6c</color>
+    <color name="light_red">#DD2F2F</color>
+    <color name="dark_red">#C51313</color>
+    <color name="default1">#448FC4</color>
+    <color name="grayness">#898989</color>
+    <color name="blue">#3BBFF2</color>
+    <color name="light_blue">#85D3EF</color>
+    <color name="list_gray">#dedede</color>
+    <color name="orange_pressed">#E87A0F</color>
+
+    <drawable name="transparent_none">#00000000</drawable>
+
+    <color name="umeng_fb_color_btn_pressed">#1495F7</color>
+    <color name="umeng_fb_color_btn_normal">#333333</color>
+    <color name="home_notice_pink">#ffb3b3</color>
+    <color name="home_notice_green">#98d6a1</color>
+    <color name="home_notice_blue">#9ec5e2</color>
+    <color name="home_notice_yellow">#f3cb60</color>
+    <color name="btn_gray_normal">#c0c0c0</color>
+    <color name="btn_gray_pressed_status">#b5b5b6</color>
+    <color name="btn_gray_pressed">#666667</color>
+    <color name="btn_blue_normal">#1e90ff</color>
+    <color name="btn_blue_pressed">#0066FF</color>
+    <color name="orange">#FFA500</color>
+    <color name="highlight_money">#92291A</color>
+    
+    <color name="blue_light">#ddf3fc</color>
+    <color name="ground_light">#f5f5f5</color>
+    <color name="text_color">#a5a5a5</color>
+    <color name="app_text">#17b421</color>
+    <color name="line2">#8B7500</color>
+    <color name="line1">#D9D9D9</color>
+    <color name="line3">#FFFF00</color>
+    
+    <color name="text_color1">#FFFFFF</color>
+    <color name="divider_color">#11000000</color>
+    <color name="msg_color">#FFFFFFFF</color>
+    <color name="dialog_bg">#ffe74c3c</color>
+    
+    <color name="btn_press_color">#1c9dd8</color>
+    <color name="btn_unpress_color">#48baed</color>
+    
+     <color name="text_color_gray">#aaaaaa</color>
+     <color name="text_color_green">#54AF6C</color>
+     
+     <color name="list_search_color_blue">#00b7ff</color>
+     <color name="btn_confirm_normal">#00acee</color>
+     <color name="btn_confirm_pressed">#007fc6</color>
+     
+     <!-- login/register -->
+     <color name="hint_color">#999999</color>
+     <color name="text_black">#000000</color>
+     <color name="prime_blue">#02adee</color>
+     <color name="bg_register">#f0f0f0</color>
+     
+     <!-- guahao -->
+     <color name="smart_tab_blue">#00a6e7</color>
+     <!-- pagerSlidingTabStrip -->
+     <color name="background_tab_pressed">#6633B5E5</color>
+     <color name="item_tag">#666666</color>
+</resources>

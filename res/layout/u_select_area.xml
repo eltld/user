@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <net.ememed.user2.widget.RefreshListView
+            android:id="@+id/ll_conten_nav"
+            style="@style/listview_style"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+                        />
+
+        <net.ememed.user2.widget.RefreshListView
+            android:id="@+id/lv_area"
+            style="@style/listview_style"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_empty"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ememed_empty" />
+
+        <TextView
+            android:id="@+id/tv_notice"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/huise"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</LinearLayout>

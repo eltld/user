@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FDFFFF" >
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <TextView
+            android:id="@+id/bingli_add_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:gravity="top"
+            android:singleLine="true"
+            android:padding="5dp"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:text="2014-7-12:" />
+        <TextView
+            android:id="@+id/bingli_add_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip"
+            android:layout_toRightOf="@id/bingli_add_text1"
+            android:gravity="top"
+            android:padding="5dp"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:text="123" />
+
+        <LinearLayout
+            android:id="@+id/li_line1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingBottom="8dp"
+            android:layout_alignLeft="@id/bingli_add_text"
+            android:layout_below="@id/bingli_add_text"
+            android:orientation="horizontal" >
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="60dp"
+                android:layout_height="60dp" 
+                android:scaleType="centerCrop"         
+                android:src="@drawable/medical_history_add_picture" />
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/medical_history_add_picture" />
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/medical_history_add_picture" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/li_line2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/li_line1"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="8dip"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:visibility="gone" >
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="90dp"
+                android:layout_height="90dp"             
+                android:src="@drawable/medical_history_add_picture"
+                android:visibility="gone" />
+            <ImageView
+                android:id="@+id/image5"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="8dp"
+                android:src="@drawable/medical_history_add_picture"
+                android:visibility="gone" />
+            <ImageView
+                android:id="@+id/image6"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/medical_history_add_picture"
+                android:visibility="gone" />
+        </LinearLayout>
+    </RelativeLayout>
+    
+
+</LinearLayout>

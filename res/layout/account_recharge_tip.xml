@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_corner_solid_stroke"
+    android:orientation="vertical" >
+    
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="提示"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       
+        android:text="即将开放，请耐心等待"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        
+        />
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="0.5dp"
+        android:background="@color/reseda"
+        />
+    
+    <Button 
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:text="确定"
+        android:textColor="@color/blue"
+        android:background="@null"
+        />
+
+</LinearLayout>

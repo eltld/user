@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/bar_title" />
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="18dp"
+        android:text="更换手机号后，下次登录可使用新的手机号码"
+        android:textColor="#666666" />
+
+    <LinearLayout
+        style="@style/register_input_box"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            style="@style/register_input_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机号：" />
+
+        <EditText
+            android:id="@+id/et_mobile"
+            style="@style/register_input_hints"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="请输入11位手机号码"
+            android:inputType="number"
+            android:maxLength="11" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/register_input_box"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingRight="4dp" >
+
+        <TextView
+            style="@style/register_input_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="验证码：" />
+
+        <EditText
+            android:id="@+id/et_check_code"
+            style="@style/register_input_hints"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="请输入验证码"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btn_check_code"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_verify_code"
+            android:onClick="doClick"
+            android:text="获取验证码"
+            android:textColor="@color/prime_blue"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_submit"
+        style="@style/register_button_blue"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="doClick"
+        android:text="确认修改" />
+
+</LinearLayout>

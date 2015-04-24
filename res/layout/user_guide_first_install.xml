@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+         />
+
+    <LinearLayout
+        android:id="@+id/guider_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/guide_tixian"
+            android:layout_width="120dp"
+            android:layout_height="38dp"
+            android:clickable="true"
+            android:text="开始体验"
+            android:textColor="@drawable/txt_guide_begin_color"
+            android:textSize="21dp"
+            android:background="@drawable/btn_guide_begin"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:visibility="gone"
+                />
+<!--  
+                       <Button
+            android:id="@+id/guide_zhuce"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:text="免费注册"
+            android:textColor="#FFFFFFFF"
+            android:textSize="20dp"
+            android:background="@drawable/guide_1"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentBottom="true"
+            
+                />
+
+
+
+        <Button
+            android:id="@+id/guide_tixian"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:clickable="true"
+            android:text="直接体验"
+            android:textColor="#FFFFFFFF"
+            android:textSize="20dp"
+            android:background="@drawable/guide_1"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentBottom="true"
+                   />
+        -->
+      <!--   <Button
+            android:id="@+id/guide_zhuce"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/guide_1"
+            android:clickable="true"
+            android:text="免费注册"
+            android:textColor="#FFFFFFFF"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/guide_tixian"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/guide_2"
+            android:clickable="true"
+            android:text="直接体验"
+            android:textColor="@color/tab_light_gray"
+            android:textSize="20dp" /> -->
+    </LinearLayout>
+    <LinearLayout   
+        android:id="@+id/ll"   
+        android:orientation="horizontal"   
+        android:layout_width="wrap_content"   
+        android:layout_height="wrap_content"   
+        android:layout_marginBottom="30dp"
+        android:layout_alignParentBottom="true"   
+        android:layout_centerHorizontal="true">  
+          
+        <ImageView  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_gravity="center_vertical"  
+            android:clickable="true"  
+            android:padding="5dp"  
+            android:src="@drawable/guide_page_dot" />  
+  
+        <ImageView  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_gravity="center_vertical"  
+            android:clickable="true"  
+            android:padding="5dp"  
+            android:src="@drawable/guide_page_dot" />  
+  
+        <ImageView  
+            android:layout_width="wrap_content"  
+            android:layout_height="wrap_content"  
+            android:layout_gravity="center_vertical"  
+            android:clickable="true"  
+            android:padding="5dp"  
+            android:src="@drawable/guide_page_dot" />  
+  
+    </LinearLayout> 
+    
+
+</RelativeLayout>

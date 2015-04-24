@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:state_enabled="true" android:state_focused="true" android:state_pressed="false" android:drawable="@drawable/issue" />
+    <item android:state_enabled="true" android:state_pressed="true" android:drawable="@drawable/issue" />
+    <item android:state_enabled="true" android:state_checked="true" android:drawable="@drawable/issue" />
+    <item android:drawable="@drawable/issue_unclick" android:state_selected="true" />
+    <item android:drawable="@drawable/issue_unclick" android:state_selected="false"/>
+    <item android:drawable="@drawable/issue_unclick" />
+</selector>

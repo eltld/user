@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+
+    <EditText
+        android:id="@+id/feedback_message"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/box_ground"
+        android:gravity="top|left"
+        android:maxLength="200"
+        android:hint="尊敬的用户，薏米医生非常重视您的建议和意见，请在这里输入您的看法，薏米医生全体工作人员向您致以诚挚的感谢。"
+        android:padding="4dp"
+        android:textColor="@color/black" />
+
+</LinearLayout>

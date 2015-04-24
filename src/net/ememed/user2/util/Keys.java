@@ -1,0 +1,21 @@
+/*
+ * Copyright (C) 2010 The MobileSecurePay Project
+ * All right reserved.
+ * author: shiqun.shi@alipay.com
+ */
+
+package net.ememed.user2.util;
+
+
+public final class Keys {
+
+	public static final String DEFAULT_PARTNER = "2088801433226238";
+
+	public static final String DEFAULT_SELLER = "2088801433226238";
+	//pck8
+	public static final String PRIVATE = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAOC7JNwIKgUjWnqGRxTvkFzyp24PjS19BkSo0G4mk3gA3xfERn5aMRf59ZDhDWmnXu2Vx1Yw9aJBzSrbBfaxmY5DG/oyCkptz0MrqUbKUDG6dsKBF1tLxqiaJC7vEVxG5iNPNmZ3Mg1IZoV7KjuqKBXOZCVx6DbH9fM1/HnbeYD/AgMBAAECgYAXBdUe3Y9Ae4C3cK4zjN9jRlC0y88Qy/AqdIj13+nXr28rhiYap67D4A2yS/wNyOHGwUNspxNjDg6wx0NzJHqwkSpNS7TMK1I6emcUAZaHyHkJRgY2nz77lsjSQvYvYzDRzVVsyzdn7khIVbpFSTTWw2TCrxxGgu6tvnVFpaxbMQJBAPqK53jlP5/I12m6dcC3KOUdfDmg/V9x8HVxJX3shsIdDLmqNnDGgyuLOZ6iIp0yeuE3PcOMm959W457+Wxrl60CQQDloE6pghUYXK1Q27x/oCaJNiEGR+aZYG5pAup9QICqrZjnepEnbrLYv+Vemwwu0D1ZLPpyE7Us1pfqfpdaAcDbAkEAiQdXumOH/NhYGNeGd7S1hTovK0XFzmH+5fzQSKMIwToqL5HM3Ll2HGa1SPHchKWLV4pjGYTZ60IcxT1BGe9usQJAQet5aZQcdjf00Wejf4f8SBuv81ukyZczWxYpNvfTeCwJ3zoCfa17zlmYgUZFgxLo6bbN1v3tXwfj6L+at44VTQJBAMnXcO67GafD/OLA8RoyP0ejr5330sqAl6BQsJSBGzDdC+e38M4XtBrwvMx2DJO9Y6J0C9iU5d0ZbXPQcxJQhlM=";
+
+	public static final String PUBLIC = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGU/ue2o0uyWzIgeFC5IL2J54hyHs8VvA+Zyzc jzEqZkt2tuQLv2QLA7YK/4C/h5WksVo10CdCpKaTEWODLaIhFXViE+D7tvI0hVf1D+2SLHkB00zz npsAmYrbpZyyRxVT/B19Me69KklBJslZ5WhzLgMtDxNtWXvlIubAT2VTgQIDAQAB";
+	// 支付宝安全支付服务apk的名称，必须与assets目录下的apk名称一致
+	public static final String ALIPAY_PLUGIN_NAME = "alipay_msp.apk";
+}

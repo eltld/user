@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_write_round"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_hosp_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="广东省中医院"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/et_hosp_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="请输入医院名称"
+        android:maxLines="30"
+        android:singleLine="true"
+        android:text=""
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/et_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="填写诊疗卡号"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/bt_free_consult"
+        android:text="确定"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

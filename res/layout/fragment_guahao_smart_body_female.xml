@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <ImageView
+        android:id="@+id/iv_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_guahao_smart_body_female_front" />
+
+    <TextView
+        android:id="@+id/tv_neck"
+        style="@style/guahao_smart_body_item"
+        android:text="颈部" />
+
+    <TextView
+        android:id="@+id/tv_upper_limb"
+        style="@style/guahao_smart_body_item"
+        android:layout_marginTop="32dp"
+        android:text="上肢" />
+
+    <TextView
+        android:id="@+id/tv_genitals"
+        style="@style/guahao_smart_body_item"
+        android:layout_marginTop="64dp"
+        android:text="生殖器" />
+
+    <TextView
+        android:id="@+id/tv_panqiang"
+        style="@style/guahao_smart_body_item"
+        android:layout_marginTop="96dp"
+        android:text="盘腔" />
+
+    <View
+        android:id="@+id/line_neck"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_neck"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/tv_neck"
+        android:background="#bababa" />
+
+    <View
+        android:id="@+id/line_upper_limb"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_upper_limb"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/tv_upper_limb"
+        android:background="#bababa" />
+
+    <View
+        android:id="@+id/line_panqiang"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_panqiang"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/tv_panqiang"
+        android:background="#bababa" />
+
+    <View
+        android:id="@+id/line_genitals"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_genitals"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@+id/tv_genitals"
+        android:background="#bababa" />
+
+
+    <TextView
+        android:id="@+id/tv_head"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:text="头部" />
+
+    <View
+        android:id="@+id/line_head"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_head"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/tv_head"
+        android:background="#bababa" />
+
+    <TextView
+        android:id="@+id/tv_skin"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="32dp"
+        android:text="皮肤" />
+
+    <View
+        android:id="@+id/line_skin"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_skin"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/tv_skin"
+        android:background="#bababa" />
+
+    <TextView
+        android:id="@+id/tv_chest"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="64dp"
+        android:text="胸部" />
+
+    <View
+        android:id="@+id/line_chest"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_chest"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/tv_chest"
+        android:background="#bababa" />
+
+    <TextView
+        android:id="@+id/tv_back"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="96dp"
+        android:text="背部" />
+
+    <View
+        android:id="@+id/line_back"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_back"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/tv_back"
+        android:background="#bababa" />
+
+    <TextView
+        android:id="@+id/tv_abdomen"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="128dp"
+        android:text="腹部" />
+
+    <View
+        android:id="@+id/line_abdomen"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_abdomen"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/tv_abdomen"
+        android:background="#bababa" />
+
+    <TextView
+        android:id="@+id/tv_waist"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="160dp"
+        android:text="腰部" />
+
+    <View
+        android:id="@+id/line_waist"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_waist"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/tv_waist"
+        android:background="#bababa" />
+
+    <TextView
+        android:id="@+id/tv_body"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="192dp"
+        android:text="全身" />
+
+    <TextView
+        android:id="@+id/tv_limbs"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="224dp"
+        android:text="四肢" />
+
+    <TextView
+        android:id="@+id/tv_other"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="256dp"
+        android:text="其他" />
+
+    <TextView
+        android:id="@+id/tv_lower_limb"
+        style="@style/guahao_smart_body_item"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="288dp"
+        android:text="下肢" />
+
+    <View
+        android:id="@+id/line_lower_limb"
+        android:layout_width="10dp"
+        android:layout_height="1px"
+        android:layout_alignTop="@+id/tv_lower_limb"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/tv_lower_limb"
+        android:background="#bababa" />
+
+</RelativeLayout>

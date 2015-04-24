@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <net.ememed.user2.widget.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/iv_portrait"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_margin="12dp"
+        android:src="@drawable/default_portrait" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/iv_portrait"
+        android:layout_marginBottom="4dp"
+        android:layout_toRightOf="@id/iv_portrait"
+        android:singleLine="true"
+        android:text="刘莉莉"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_profession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_name"
+        android:layout_below="@id/tv_name"
+        android:layout_marginBottom="4dp"
+        android:singleLine="true"
+        android:text="职务：主任医师"
+        android:textColor="#999999" />
+
+    <TextView
+        android:id="@+id/tv_speciality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/tv_profession"
+        android:layout_below="@id/tv_profession"
+        android:singleLine="true"
+        android:text="擅长：鼻部、颈部修复"
+        android:textColor="#999999" />
+
+    <CheckBox
+        android:id="@+id/cb_schdule"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/selector_guahao_schdule"
+        android:button="@null"
+        android:checked="false" />
+
+</RelativeLayout>

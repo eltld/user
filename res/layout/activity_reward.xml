@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reseda"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
+
+        <net.ememed.user2.widget.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iv_userhead"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/avatar_large"
+            app:border_color="@color/btn_gray_normal"
+            app:border_width="2dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/doctor_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="张三"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/professional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="主任医师"
+                android:textColor="@color/text_color_gray"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:gravity="right"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已有"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_reward_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="0"
+                android:textColor="@color/orange"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="人打赏"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/light_gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:text="打赏金额"
+            android:textSize="14sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/light_gray" />
+
+        
+        <RadioGroup 
+            android:id="@+id/radio_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            
+            >
+            
+            <RadioButton 
+                 android:id="@+id/circle_1"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:text="1元"
+                android:gravity="center"
+                android:textColor="@color/shape_circle_color"
+                android:button="@android:color/transparent"
+                android:background="@drawable/shape_circle"
+                />
+            <RadioButton 
+                 android:id="@+id/circle_2"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:text="5元"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/shape_circle_color"
+                android:button="@android:color/transparent"
+                android:background="@drawable/shape_circle"
+                />
+            <RadioButton 
+                 android:id="@+id/circle_3"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:text="10元"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:textColor="@color/shape_circle_color"
+                android:button="@android:color/transparent"
+                android:background="@drawable/shape_circle"
+                />
+            <RadioButton 
+                 android:id="@+id/circle_4"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:text="20元"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:textColor="@color/shape_circle_color"
+                android:button="@android:color/transparent"
+                android:background="@drawable/shape_circle"
+                />
+            
+        </RadioGroup>
+
+        
+        <EditText
+            android:id="@+id/et_other_money"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_corner_nosolid"
+            android:textSize="14sp"
+            android:inputType="number"
+            android:hint="输入其他金额，最低1元"
+            >
+
+            <requestFocus />
+        </EditText>
+        
+         <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="8dp"
+            android:minLines="3"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_corner_nosolid"
+            android:textSize="14sp"
+            android:gravity="top"
+            android:hint="发表几句个人看法吧">
+
+            <requestFocus />
+        </EditText>
+        
+        
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:onClick="doClick"
+            android:background="@drawable/btn_confirm"
+            android:text="下一步"
+            android:textColor="@color/white"
+            />
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/topbg_green"
+            android:textSize="12sp"
+            android:text="@string/baike_reward_tip_1"/>
+    </LinearLayout>
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        
+        <TextView
+            android:id="@+id/title_reward_wall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:background="#dedede"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#666666"
+            android:text=""/>
+      
+        <net.ememed.user2.widget.RefreshListViewForScrollView
+	        android:id="@+id/reward_list"
+	        style="@style/listview_style"
+	        android:layout_width="fill_parent"  
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp" />
+    </LinearLayout>
+    
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

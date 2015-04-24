@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_hospital__tag"
+        style="@style/guahao_visit_texttext"
+        android:layout_below="@id/space4"
+        android:text="医    院:" />
+
+    <TextView
+        android:id="@+id/tv_hospital"
+        style="@style/guahao_visit_edittext"
+        android:layout_alignTop="@id/tv_hospital__tag"
+        android:layout_toRightOf="@id/tv_hospital__tag"
+        android:gravity="center_vertical" />
+
+    <View
+        android:id="@+id/space"
+        style="@style/guahao_space"
+        android:layout_below="@id/tv_hospital"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/tv_card_tag"
+        style="@style/guahao_visit_texttext"
+        android:layout_below="@id/space"
+        android:text="就诊卡:" />
+
+    <TextView
+        android:id="@+id/tv_card"
+        style="@style/guahao_visit_edittext"
+        android:layout_alignTop="@id/tv_card_tag"
+        android:layout_toRightOf="@id/tv_card_tag"
+        android:gravity="center_vertical" />
+
+</RelativeLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+        android:fillViewport="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/reseda"
+                android:orientation="vertical" >
+
+                <WebView
+                    android:id="@+id/wv_oauth"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentTop="true"
+                    android:background="#FFFFFFFF" />
+
+                <ProgressBar
+                    android:id="@+id/webview_progress"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentTop="true"
+                    android:max="100" />
+
+                <include
+                    layout="@layout/u_empty_view"
+                    android:visibility="gone" />
+
+                <include
+                    layout="@layout/u_net_unavailable"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/give_bnt"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/give_bnt" />
+
+                <Button
+                    android:id="@+id/praise_bnt"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/praise_bnt" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/discuss_tx"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#dadada"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="共0条评论"
+                android:textColor="@color/grayness" />
+
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

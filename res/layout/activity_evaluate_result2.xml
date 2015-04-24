@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/bar_title" />
+
+    <RelativeLayout
+        android:id="@+id/layout_doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_top_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="32dp" >
+
+        <net.ememed.user2.widget.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/iv_portrait"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/default3_doctor"
+            app:border_color="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/iv_portrait"
+            android:text="医生"
+            android:textColor="@color/prime_blue"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_portrait"
+            android:layout_marginBottom="8dp"
+            android:layout_toRightOf="@id/iv_portrait"
+            android:text="主治医生"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_doctor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:lineSpacingExtra="12dp"
+        android:text="感谢您的评价，\n如果您想继续获得我的帮助，您可以关注我！" />
+
+    <View
+        android:id="@+id/holder"
+        android:layout_width="24dp"
+        android:layout_height="0dp"
+        android:layout_below="@id/tv_tips"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btn_information"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_tips"
+        android:layout_toLeftOf="@id/holder"
+        android:background="@drawable/shape_rectangle_btn_blue_normal"
+        android:onClick="doClick"
+        android:text="查看我的资料"
+        android:textColor="@color/prime_blue"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btn_follow"
+        android:layout_width="132dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_tips"
+        android:layout_toRightOf="@id/holder"
+        android:background="@drawable/shape_rectangle_btn_blue_normal"
+        android:onClick="doClick"
+        android:text="关注我"
+        android:textColor="@color/prime_blue"
+        android:textSize="16sp" />
+
+</RelativeLayout>

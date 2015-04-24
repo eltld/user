@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#f5f5f5"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:orientation="vertical"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <ImageView
+                        android:id="@+id/app_userinfo_img"
+                        android:layout_width="25.0dip"
+                        android:layout_height="25.0dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10.0dip"
+                        android:background="@drawable/medical_history_head"
+                        android:scaleType="matrix" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_toRightOf="@id/app_userinfo_img"
+                        android:text="个人基础信息"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <EditText
+                        android:id="@+id/user_edit_name"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dip"
+                        android:layout_marginRight="30dip"
+                        android:background="@drawable/medical_history_edit2"
+                        android:hint="姓名"
+                        android:padding="5dp"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/history_medical_user_item_text" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_gender"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <EditText
+                        android:id="@+id/user_edit_gender"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dip"
+                        android:layout_marginRight="30dip"
+                        android:background="@drawable/medical_history_edit2"
+                        android:hint="性别"
+                        android:padding="5dp"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/history_medical_user_item_text" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dip"
+                        android:src="@drawable/medical_history_drop_icon" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_id"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <EditText
+                        android:id="@+id/user_edit_id"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dip"
+                        android:layout_marginRight="30dip"
+                        android:background="@drawable/medical_history_edit2"
+                        android:hint="身份证号码"
+                        android:padding="5dp"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/history_medical_user_item_text" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_birthday"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <EditText
+                        android:id="@+id/user_edit_gender"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dip"
+                        android:layout_marginRight="30dip"
+                        android:background="@drawable/medical_history_edit2"
+                        android:hint="出生年月"
+                        android:padding="5dp"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/history_medical_user_item_text" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dip"
+                        android:src="@drawable/medical_history_calendar" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_userinfo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <ImageView
+                        android:id="@+id/app_userinfo_img"
+                        android:layout_width="25.0dip"
+                        android:layout_height="25.0dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10.0dip"
+                        android:background="@drawable/medical_history_note"
+                        android:scaleType="matrix" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_toRightOf="@id/app_userinfo_img"
+                        android:text="就诊基础信息"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <EditText
+                        android:id="@+id/user_edit_time"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dip"
+                        android:layout_marginRight="30dip"
+                        android:background="@drawable/medical_history_edit2"
+                        android:editable="false"
+                        android:hint="就诊时间"
+                        android:onClick="doClick"
+                        android:padding="5dp"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/history_medical_user_item_text" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="35dip"
+                        android:src="@drawable/medical_history_calendar" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_hospital"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <RelativeLayout
+                        android:id="@+id/user_edit_hospital_rl"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" >
+
+                        <EditText
+                            android:id="@+id/user_edit_hospital"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dip"
+                            android:layout_marginRight="30dip"
+                            android:background="@drawable/medical_history_edit2"
+                            android:hint="请选择医院"
+                            android:padding="5dp"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/history_medical_user_item_text" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="35dip"
+                            android:src="@drawable/medical_history_drop_icon" />
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/user_edit_self_hospital"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="30dip"
+                        android:layout_marginRight="30dip"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/medical_history_edit2"
+                        android:hint="没有您要选择的医院可在此框中填写"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/history_medical_user_item_text" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_keshi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <RelativeLayout
+                        android:id="@+id/user_edit_keshi_rl"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" >
+
+                        <EditText
+                            android:id="@+id/user_edit_keshi"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="30dip"
+                            android:layout_marginRight="30dip"
+                            android:background="@drawable/medical_history_edit2"
+                            android:hint="请选择科室"
+                            android:padding="5dp"
+                            android:textColor="#000000"
+                            android:textSize="@dimen/history_medical_user_item_text" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="35dip"
+                            android:src="@drawable/medical_history_drop_icon" />
+                    </RelativeLayout>
+
+                    <EditText
+                        android:id="@+id/user_edit_self_keshi"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="30dip"
+                        android:layout_marginRight="30dip"
+                        android:layout_marginTop="10dip"
+                        android:background="@drawable/medical_history_edit2"
+                        android:hint="没有您要选择的科室可在此框中填写"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/history_medical_user_item_text" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_zhenzhuang"
+                    android:layout_width="fill_parent"
+                    android:layout_height="90dip"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical" >
+
+                    <EditText
+                        android:id="@+id/user_edit_zhengzhuang"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="30dip"
+                        android:layout_marginRight="30dip"
+                        android:background="@drawable/medical_history_edit2"
+                        android:gravity="top"
+                        android:hint="症状"
+                        android:lines="3"
+                        android:padding="5dp"
+                        android:textColor="#000000"
+                        android:textSize="@dimen/history_medical_user_item_text" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginTop="10.0dip"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_imformation"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/history_medical_user_item_height"
+                    android:background="#ffffff" >
+
+                    <ImageView
+                        android:id="@+id/app_imformation_img"
+                        android:layout_width="25.0dip"
+                        android:layout_height="25.0dip"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10.0dip"
+                        android:background="@drawable/medical_history_add"
+                        android:scaleType="matrix" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_toRightOf="@id/app_imformation_img"
+                        android:text="详细病情信息"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_zhenzhuang_new"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#ffffff"
+                    android:gravity="center_vertical" >
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dip"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/medical_history_add_bg" >
+
+                        <LinearLayout
+                            android:id="@+id/rl_zhenzhuang_add"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_horizontal"
+                            android:onClick="doClick"
+                            android:orientation="horizontal" >
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@drawable/medical_history_add_add" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="12dp"
+                                android:text="添加诊疗详细信息"
+                                android:textSize="15sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/medical_history_bg_fenge" />
+            </LinearLayout>
+        </LinearLayout>
+
+</LinearLayout>

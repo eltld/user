@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efefef"
+    android:orientation="vertical" >
+
+    <include android:id="@+id/search_resource_back" layout="@layout/top_bar_doctor_green" />
+
+
+    <net.ememed.user2.widget.AutoCompletEditText
+        android:id="@+id/autoComplet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </net.ememed.user2.widget.AutoCompletEditText>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/tab1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:background="@drawable/search_fragment_tab_bg"
+            android:textColor="@color/search_text_color"
+            android:text="全部" />
+
+        <RadioButton
+             android:id="@+id/tab2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:background="@drawable/search_fragment_tab_bg"
+            android:textColor="@color/search_text_color"
+            android:gravity="center"
+            android:text="找医生工作室" />
+
+        <RadioButton
+             android:id="@+id/tab3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:textColor="@color/search_text_color"
+            android:background="@drawable/search_fragment_tab_bg"
+            android:gravity="center"
+            android:text="找免费挂号" />
+
+        <RadioButton
+             android:id="@+id/tab4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:textColor="@color/search_text_color"
+            android:background="@drawable/search_fragment_tab_bg"
+            android:gravity="center"
+            android:text="找医院" />
+
+        <RadioButton
+             android:id="@+id/tab5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@android:color/transparent"
+            android:textColor="@color/search_text_color"
+            android:background="@drawable/search_fragment_tab_bg"
+            android:gravity="center"
+            android:text="找病历" />
+    </RadioGroup>
+
+    
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp" >
+ 
+    </android.support.v4.view.ViewPager>
+    
+
+</LinearLayout>

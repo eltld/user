@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+        
+        <TextView
+            android:id="@+id/bingli_add_text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dip"
+            android:layout_alignBaseline="@+id/bingli_add_text"
+            android:gravity="top"
+            android:singleLine="true"
+            android:padding="5dp"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:text="" />
+
+        <EditText
+            android:id="@+id/bingli_add_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/bingli_add_text1"
+            android:background="@drawable/medical_history_edit2"
+            android:gravity="top"
+            android:singleLine="true"
+            android:editable="false"
+            android:padding="5dp"
+            android:textColor="#000000"
+            android:textSize="@dimen/history_medical_user_item_text" />
+
+    <net.ememed.user2.medicalhistory.NoScrollGridView
+        android:id="@+id/listview_item_gridview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="5dip"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="5dp"
+        android:layout_alignLeft="@id/bingli_add_text"
+        android:layout_below="@id/bingli_add_text" />
+    </RelativeLayout>
+
+</LinearLayout>

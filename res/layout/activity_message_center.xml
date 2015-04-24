@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reseda"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+
+    <RelativeLayout
+        android:id="@+id/rl_order_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:onClick="doClick" >
+
+
+        <LinearLayout
+            android:id="@+id/ll_pic_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pic_message_order" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ll_pic_1"
+            android:layout_alignTop="@+id/ll_pic_1"
+            android:layout_toRightOf="@+id/ll_pic_1"
+            android:orientation="vertical"
+            android:paddingRight="5dp" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" >
+
+                <TextView
+                    android:id="@+id/title_order_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="1dp"
+                    android:paddingTop="4dp"
+                    android:text="订单服务短信"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_time_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/title_order_message"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_unread_num_1"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_toRightOf="@id/title_order_message"
+                    android:background="@drawable/red_point"
+                    android:gravity="center_horizontal"
+                    android:paddingBottom="1dp"
+                    android:text="99"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_content_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:text=""
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_charge_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:onClick="doClick" >
+
+        <LinearLayout
+            android:id="@+id/ll_pic_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pic_message_cash" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ll_pic_2"
+            android:layout_alignTop="@+id/ll_pic_2"
+            android:layout_toRightOf="@+id/ll_pic_2"
+            android:orientation="vertical"
+            android:paddingRight="5dp" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" >
+
+                <TextView
+                    android:id="@+id/title_cash_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="1dp"
+                    android:paddingTop="4dp"
+                    android:text="充值短信"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_time_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/title_cash_message"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_unread_num_2"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_toRightOf="@id/title_cash_message"
+                    android:background="@drawable/red_point"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_content_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:text=""
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_activity_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:onClick="doClick" >
+
+        <LinearLayout
+            android:id="@+id/ll_pic_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/pic_message_activity" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ll_pic_3"
+            android:layout_alignTop="@+id/ll_pic_3"
+            android:layout_toRightOf="@+id/ll_pic_3"
+            android:orientation="vertical"
+            android:paddingRight="5dp" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" >
+
+                <TextView
+                    android:id="@+id/title_activity_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="1dp"
+                    android:paddingTop="4dp"
+                    android:text="活动短信"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_time_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/title_activity_message"
+                    android:layout_alignParentRight="true"
+                    android:text=""
+                    android:textColor="@color/text_color_gray"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_unread_num_3"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_toRightOf="@id/title_activity_message"
+                    android:background="@drawable/red_point"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_content_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:text=""
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0" >
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/bar_title" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="240dp"
+        android:layout_height="36dp"
+        android:layout_below="@+id/layout_top_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:checkedButton="@+id/rb_male"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <net.ememed.user2.widget.DrawableCenterRadioButton
+            android:id="@+id/rb_male"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_guahao_smart_tab_bg_left"
+            android:button="@null"
+            android:drawableLeft="@drawable/selector_guahao_smart_male"
+            android:drawablePadding="4dp"
+            android:text="男"
+            android:textColor="@drawable/selector_guahao_smart_tab_text"
+            android:textSize="14sp" />
+
+        <net.ememed.user2.widget.DrawableCenterRadioButton
+            android:id="@+id/rb_female"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/selector_guahao_smart_tab_bg_right"
+            android:button="@null"
+            android:drawableLeft="@drawable/selector_guahao_smart_female"
+            android:drawablePadding="4dp"
+            android:text="女"
+            android:textColor="@drawable/selector_guahao_smart_tab_text"
+            android:textSize="14sp" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/radioGroup"
+        android:layout_marginBottom="48dp"
+        android:layout_marginTop="48dp" >
+
+    </android.support.v4.view.ViewPager>
+
+    <CheckBox
+        android:id="@+id/cb_convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginRight="24dp"
+        android:button="@null"
+        android:drawablePadding="4dp"
+        android:drawableTop="@drawable/selector_guahao_smart_convert"
+        android:gravity="center"
+        android:minWidth="48dp"
+        android:text="转身"
+        android:checked="true"
+        android:onClick="convert"
+        android:textColor="#666666"
+        android:textSize="13sp" />
+
+</RelativeLayout>

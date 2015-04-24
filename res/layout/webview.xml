@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <include layout="@layout/top_bar_doctor_green" />
+
+        <ProgressBar
+            android:id="@+id/webview_progress_normal"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:max="100" />
+
+        <uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:ptr="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ptr_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" 
+            android:background="#F4F4F4">
+
+            <WebView
+                android:id="@+id/wv_oauth"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include
+                layout="@layout/u_empty_view"
+                android:visibility="gone" />
+
+            <include
+                layout="@layout/u_net_unavailable"
+                android:visibility="gone" />
+        </uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/info_border"
+            android:orientation="horizontal" >
+            
+            <RelativeLayout
+                android:id="@+id/edittext_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="3dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                 >
+
+                <EditText
+                    android:id="@+id/et_send_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="200"
+                    android:maxLines="3"
+                    android:hint="请输入评论"
+                    android:minHeight="50dp"
+                    android:drawableLeft="@drawable/img_consult_comment"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/img_consult_send"
+                android:visibility="visible" />
+            
+            <!-- android:background="@drawable/chat_send_btn_selector"
+                 -->
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp"
+        android:background="#66000000"
+        android:clickable="true"
+        android:onClick="doClick"
+        android:visibility="gone" />
+
+</RelativeLayout>

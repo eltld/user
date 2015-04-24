@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reseda"
+    android:orientation="vertical" >
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        />
+    
+    <LinearLayout
+        android:id="@+id/createAndFindGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        
+        <LinearLayout 
+            android:id="@+id/createGroup"
+            android:layout_marginLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_douban"/>
+               
+            <TextView 
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/qunliao_createGroup"/>
+            
+        </LinearLayout>
+        
+         <LinearLayout 
+            android:id="@+id/createGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo_facebook"/>
+               
+            <TextView 
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/qunliao_findGroup"/>
+            
+        </LinearLayout>
+            
+    </LinearLayout>
+<!--  
+    <uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout
+        android:id="@+id/ptr_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView
+            android:id="@+id/tv_error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/huise"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <net.ememed.user2.widget.RefreshListView
+            android:id="@+id/ptr_listview"
+            style="@style/listview_style"
+            android:layout_height="fill_parent" >
+        </net.ememed.user2.widget.RefreshListView>
+
+        <include
+            layout="@layout/u_empty_view"
+            android:visibility="gone" />
+
+        <include
+            layout="@layout/u_net_unavailable"
+            android:visibility="gone" />
+    </uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout>
+-->
+</RelativeLayout>

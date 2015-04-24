@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/titleView"
+        layout="@layout/top_bar_doctor_green" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <EditText
+            android:id="@+id/bingli_add_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dip"
+            android:layout_marginRight="12dip"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/medical_history_edit2"
+            android:gravity="top"
+            android:hint="添加文字描述"
+            android:lines="5"
+            android:padding="5dp"
+            android:textColor="#000000"
+            android:textSize="@dimen/history_medical_user_item_text" />
+
+        <net.ememed.user2.medicalhistory.activity.MyGridView
+            android:id="@+id/bingli_add_grid1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bingli_add_text"
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dip"
+            android:gravity="center"
+            android:numColumns="3" />
+    </RelativeLayout>
+
+</LinearLayout>

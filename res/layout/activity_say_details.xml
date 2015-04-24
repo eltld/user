@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+
+    <RelativeLayout
+        android:id="@+id/rl_content_area"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/ll_input_box" >
+
+            <ScrollView
+                android:id="@+id/scrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" >
+
+                <LinearLayout
+                    android:id="@+id/ll_all_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:textSize="20sp"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:layout_marginRight="10dp" >
+
+                        <TextView
+                            android:id="@+id/tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:text="    " />
+
+                        <TextView
+                            android:id="@+id/tv_author"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@+id/tv_time"
+                            android:gravity="left"
+                            android:maxWidth="80dp"
+                            android:singleLine="true"
+                            android:text="    " />
+
+                        <LinearLayout
+                            android:id="@+id/ll_share_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="5dp"
+                            android:gravity="right"
+                            android:orientation="horizontal" >
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:background="@drawable/share_icon" />
+
+                            <TextView
+                                android:id="@+id/tv_share_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:text=""
+                                android:textColor="@color/grayness" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_praise_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toLeftOf="@+id/ll_share_layout"
+                            android:gravity="right"
+                            android:orientation="horizontal" >
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:background="@drawable/praise_ioc_n" />
+
+                            <TextView
+                                android:id="@+id/tv_praise_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:text="0"
+                                android:textColor="@color/grayness" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_read_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toLeftOf="@+id/ll_praise_layout"
+                            android:orientation="horizontal" >
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:background="@drawable/caller_ioc" />
+
+                            <TextView
+                                android:id="@+id/tv_read_num"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="2dp"
+                                android:text="0"
+                                android:textColor="@color/grayness" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@color/reseda" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:orientation="vertical" >
+
+                        <WebView
+                            android:id="@+id/wv_oauth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:textSize="16sp" />
+                    
+                    
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_pic_area"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <net.ememed.user2.widget.MyGridView
+                            android:id="@+id/gridview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:horizontalSpacing="5dp"
+                            android:listSelector="@android:color/transparent"
+                            android:numColumns="5"
+                            android:verticalSpacing="5dp" >
+                        </net.ememed.user2.widget.MyGridView>
+                    </LinearLayout>
+
+                    <!--
+                     <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/reseda" />
+                    -->
+
+
+                    <!--
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/btn_give"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/give_bnt"
+                        android:onClick="doClick" />
+
+                    <Button
+                        android:id="@+id/btn_praise"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/praise_bnt"
+                        android:onClick="doClick" />
+                </LinearLayout>
+                    -->
+
+                    <TextView
+                        android:id="@+id/tv_comment_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:background="#dadada"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="共0条评论"
+                        android:textColor="@color/grayness" />
+
+                    <net.ememed.user2.widget.ListViewForScrollView
+                        android:id="@+id/lv_comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#f0f0f0" >
+                    </net.ememed.user2.widget.ListViewForScrollView>
+                </LinearLayout>
+            </ScrollView>
+            
+			<RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <Button
+                        android:id="@+id/btn_give"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_toLeftOf="@+id/btn_praise"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/give_bnt"
+                        android:onClick="doClick" />
+
+                    <Button
+                        android:id="@+id/btn_praise"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                         android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/praise_bnt"
+                        android:onClick="doClick" />
+                </RelativeLayout>
+            
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_above="@+id/ll_input_box"
+            android:background="@color/reseda" />
+
+        <LinearLayout
+            android:id="@+id/ll_input_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:minHeight="50dp"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <CheckBox
+                    android:id="@+id/cb_annoymous"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:checked="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="匿名" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_circle_rectangle_gray_no_solid"
+                android:hint="我也来说点什么..."
+                android:maxLines="2"
+                android:paddingBottom="5dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp" />
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/btn_confirm"
+                android:onClick="doClick"
+                android:text="发送"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

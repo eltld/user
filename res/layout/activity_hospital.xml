@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/fl_top_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/topbg_green"
+            android:minHeight="48dp" >
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="2dp"
+                android:onClick="doClick"
+                android:src="@drawable/top_back" />
+
+            <TextView
+                android:id="@+id/top_title"
+                style="@style/text"
+                android:text="轻松挂号" />
+
+            <LinearLayout
+                android:id="@+id/ll_select"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:minWidth="80dp"
+                android:onClick="doClick"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_Area_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="全部地区"
+                    android:textColor="@android:color/white" />
+
+                <ImageView
+                    android:id="@+id/ib_down_arrow"
+                    android:layout_width="12dp"
+                    android:layout_height="9dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dip"
+                    android:src="@drawable/guahao_arrow" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <net.ememed.user2.widget.RefreshListView
+            android:id="@+id/lv_contact_class"
+            style="@style/listview_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff" >
+        </net.ememed.user2.widget.RefreshListView>
+
+        <include
+            layout="@layout/u_empty_view"
+            android:visibility="gone" />
+
+        <include
+            layout="@layout/u_net_unavailable"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="48dp"
+        android:id="@+id/bg_gray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9F888888"
+        android:visibility="gone" />
+
+</RelativeLayout>

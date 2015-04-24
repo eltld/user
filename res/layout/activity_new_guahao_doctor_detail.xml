@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/doctor_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reseda"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_doctor_detail"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" >
+
+            <net.ememed.user2.widget.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/civ_photo"
+                android:layout_width="@dimen/size_avatar"
+                android:layout_height="@dimen/size_avatar"
+                android:src="@drawable/default_portrait"
+                app:border_color="@color/white"
+                app:border_width="2dp" />
+
+            <ImageView
+                android:id="@+id/iv_already_certification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/lab_not_certification" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tv_doctor_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="林海滨"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/tv_doctor_professional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tv_doctor_name"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tv_doctor_name"
+                    android:text="主治医生"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_guanzhu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tv_doctor_name"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@+id/tv_doctor_name"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/bg_corner_nosolid_white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/small_star_hollow_white" />
+
+                    <TextView
+                        android:id="@+id/tv_guanzhu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关注（0）"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_hospital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="广东省人民医院"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="10sp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_zhuanke"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="专科医生"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_manyidu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="满意度："
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    
+    
+    <!-- fragment -->
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal" 
+        android:baselineAligned="false">
+
+       <LinearLayout
+            android:id="@+id/ll_frag_doctor_info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/doctor_navigation"
+            android:onClick="pageChange"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_doctor_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="医生简介"
+                android:textColor="@color/frag_title_text_color" />
+
+          
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_frag_guahao"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/doctor_navigation"
+            android:onClick="pageChange"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_guahao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约挂号"
+            	android:textColor="@color/frag_title_text_color" />
+        </LinearLayout>
+        
+         <LinearLayout
+            android:id="@+id/ll_frag_zixun"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/doctor_navigation"
+            android:onClick="pageChange"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/tv_zixun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="问诊咨询"
+            	android:textColor="@color/frag_title_text_color" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <com.viewpagerindicator.CustomViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </com.viewpagerindicator.CustomViewPager>
+
+</LinearLayout>

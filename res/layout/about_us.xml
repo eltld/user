@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:paddingBottom="-150dp"
+        android:scrollbars="none"
+        android:layout_marginBottom="-200dp"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/iv"
+            android:scaleType="fitStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/about_us" />
+    </ScrollView>
+
+</LinearLayout>

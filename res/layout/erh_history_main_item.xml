@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFCFC"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="#FDFFFF" >
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="fill_parent"
+                android:layout_height="3.0dp"
+                android:background="#FF3030" />
+
+            <LinearLayout
+                android:id="@+id/li_text"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/line"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text=""
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/line_image"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/li_text"
+                android:background="@drawable/medical_history_bg_fenge" />
+
+            <LinearLayout 
+                android:id="@+id/first_line1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_image"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="疾病类型: " />
+                <TextView
+                    android:id="@+id/yulan_jiuzhengshijian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="15sp"
+                    android:text="" />
+            </LinearLayout>
+            <LinearLayout 
+                android:id="@+id/first_line2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/first_line1"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="确诊时间: " />
+                <TextView
+                    android:id="@+id/yulan_hospital"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="15sp"
+                    android:text="" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1.0dp"
+                android:layout_below="@id/first_line2"
+                android:layout_marginTop="10dp"
+                android:background="#ABABAB" />
+            </RelativeLayout>
+            
+    </LinearLayout>
+
+</LinearLayout>

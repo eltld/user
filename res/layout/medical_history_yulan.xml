@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FCFCFC"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/titleView"
+        layout="@layout/top_bar_doctor_green" />
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="#FDFFFF" >
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="fill_parent"
+                android:layout_height="3.0dp"
+                android:background="#01814A" />
+
+            <LinearLayout
+                android:id="@+id/li_text"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/line"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="就诊基础信息"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/line_image"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/li_text"
+                android:background="@drawable/medical_history_bg_fenge" />
+
+            <LinearLayout 
+                android:id="@+id/first_line1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/line_image"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="就诊时间:" />
+                <TextView
+                    android:id="@+id/yulan_jiuzhengshijian"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:gravity="right"
+                    android:layout_marginRight="15dp" />
+            </LinearLayout>
+            <LinearLayout 
+                android:id="@+id/first_line2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/first_line1"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="医        院:" />
+                <TextView
+                    android:id="@+id/yulan_hospital"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="15sp"
+                    android:text=""
+                    android:gravity="right"
+                    android:layout_marginRight="15dp" />
+            </LinearLayout>
+            <LinearLayout 
+                android:id="@+id/first_line3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/first_line2"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="科        室:" />
+                <TextView
+                    android:id="@+id/yulan_keshi"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="15sp"
+                    android:text=""
+                    android:gravity="right"
+                    android:layout_marginRight="15dp" />
+            </LinearLayout>
+            <LinearLayout 
+                android:id="@+id/first_line4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/first_line3"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15dp"
+                android:orientation="horizontal" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:text="症        状:" />
+                <TextView
+                    android:id="@+id/yulan_zhenzhuang"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="15sp"
+                    android:gravity="right"
+                    android:layout_marginRight="15dp" />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/line_image2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/first_line4"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/medical_history_bg_fenge" />
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/yulan_next"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="#FDFFFF"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/line2"
+                android:layout_width="fill_parent"
+                android:layout_height="3.0dp"
+                android:background="#EAC100" />
+
+            <LinearLayout
+                android:id="@+id/li_text2"
+                android:layout_width="fill_parent"
+                android:layout_height="40dip"
+                android:layout_below="@id/line2"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="详细病情信息"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/line_image_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/li_text2"
+                android:background="@drawable/medical_history_bg_fenge" />
+
+            <net.ememed.user2.medicalhistory.adapter.ListViewForScrollView
+                    android:id="@+id/yulan_add_bingli"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@id/line_image_2"
+                    android:background="#ffffff"
+                    android:divider="@drawable/medical_history_bg_fenge"
+                    android:dividerHeight="1dp"
+                    android:fadingEdge="none"
+                    android:persistentDrawingCache="none"
+                    android:scrollbars="none"
+                    android:scrollingCache="false"
+                    android:smoothScrollbar="true" />
+            <ImageView
+                android:id="@+id/line_image2_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/yulan_add_bingli"
+                android:background="@drawable/medical_history_bg_fenge" />
+        </RelativeLayout>
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

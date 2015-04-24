@@ -1,0 +1,182 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bar_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/topbg_green" >
+
+    <FrameLayout
+        android:id="@+id/fl_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp" >
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="2dp"
+            android:onClick="doClick"
+            android:src="@drawable/top_back" />
+
+        <LinearLayout
+            android:id="@+id/ll_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:id="@+id/top_title3"
+                style="@style/text"
+                android:text="薏米咨询3" />
+
+            <TextView
+                android:id="@+id/top_title2"
+                style="@style/text"
+                android:text="薏米咨询2" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/top_title"
+            style="@style/text"
+            android:text="薏米咨询" />
+
+        <Button
+            android:id="@+id/btn_addhealth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/u_button_bg"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:onClick="doClick"
+            android:text="菜单"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_right_fun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="20dp"
+            android:onClick="doClick"
+            android:src="@drawable/share_select"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_right_fun_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="15dp"
+            android:clickable="true"
+            android:minHeight="35dp"
+            android:minWidth="40dp"
+            android:onClick="doClick"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp"
+            android:src="@drawable/chat_detailed"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/toptitle_img_right"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical|right"
+            android:background="@drawable/drawable_back_bg2"
+            android:onClick="doClick"
+            android:src="@drawable/medical_history_add4"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_frag_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="48dp"
+        android:background="@color/topbg_green"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <RadioGroup
+            android:id="@+id/rg_frag_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/chat_frag_title_bg"
+            android:gravity="center"
+            android:minHeight="30dp"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rb_frag_title_chat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/chat_frag_title_left_btn"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:minWidth="70dp"
+                android:onClick="pageChange"
+                android:text="@string/frag_title_chat"
+                android:textColor="@color/frag_title_text_color" />
+
+            <RadioButton
+                android:id="@+id/rb_frag_title_order"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/chat_frag_title_center_btn"
+                android:button="@null"
+                android:gravity="center"
+                android:minWidth="70dp"
+                android:onClick="pageChange"
+                android:text="@string/frag_title_order"
+                android:textColor="@color/frag_title_text_color" />
+
+            <RadioButton
+                android:id="@+id/rb_frag_title_introduce"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/chat_frag_title_right_btn"
+                android:button="@null"
+                android:gravity="center"
+                android:minWidth="70dp"
+                android:onClick="pageChange"
+                android:text="@string/frag_title_introduce"
+                android:textColor="@color/frag_title_text_color" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/top_bar_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="2px"
+        android:layout_gravity="bottom"
+        android:background="#11A0E1"
+        android:visibility="visible" >
+    </View>
+
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        android:id="@+id/loading_progress"
+        style="@style/GNowProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:indeterminate="true"
+        android:minHeight="4dp"
+        android:visibility="gone" />
+
+</FrameLayout>

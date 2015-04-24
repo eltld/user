@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="添加礼品卡"
+        android:textColor="#3fd6fc"
+        android:textSize="16sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#3fd6fc" />
+
+    <EditText
+        android:id="@+id/account_eidt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_corner_solid_stroke"
+        android:gravity="center_vertical"
+        android:hint="请输入礼品卡账号"
+        android:paddingLeft="3dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/password_eidt"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_corner_solid_stroke"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:hint="请输入礼品卡密码"
+        android:inputType="textWebPassword"
+        android:paddingLeft="3dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5px"
+        android:background="@color/grayness" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal" >
+        
+        <Button 
+            android:id="@+id/Cancel_bnt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:text="@string/Cancel"
+            />
+    	<View
+        android:layout_width="0.5px"
+        android:layout_height="match_parent"
+        android:background="@color/grayness" />
+    	<Button 
+            android:id="@+id/ok_bnt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:text="@string/ok"
+            />
+    </LinearLayout>
+
+</LinearLayout>

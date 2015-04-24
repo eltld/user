@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="24dp" >
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="22dp"
+        android:drawableLeft="@drawable/ic_cartoon_xiaoyi"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:text="小薏提醒您"
+        android:textColor="@color/prime_blue"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_marginBottom="32dp"
+        android:lineSpacingExtra="8dp"
+        android:text="今日“免费提问”的机会已经用完，如果你需要更专业细致的问诊服务，建议你使用图文咨询。"
+        android:textColor="#666666"
+        android:textSize="15sp" />
+
+    <View
+        android:id="@+id/holder"
+        android:layout_width="16dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/btn_last"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_tips"
+        android:layout_toLeftOf="@id/holder"
+        android:background="@drawable/shape_rectangle_btn_blue_normal"
+        android:text="以后再说"
+        android:textColor="@color/prime_blue" />
+
+    <Button
+        android:id="@+id/btn_see"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_tips"
+        android:layout_toRightOf="@id/holder"
+        android:background="@drawable/shape_rectangle_btn_blue_normal"
+        android:text="去看看"
+        android:textColor="@color/prime_blue" />
+
+</RelativeLayout>

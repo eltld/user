@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/top_bar_doctor_green" />
+
+    <LinearLayout 
+	    android:id="@+id/ll_empty"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:gravity="center"
+	    android:orientation="vertical" >
+	
+	    <ImageView
+	        android:id="@+id/iv_bg_empty"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="15dp"
+	        android:src="@drawable/img_temp_no_valid_server" />
+	
+	    <TextView
+	        android:id="@+id/tv_notice"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:gravity="center_horizontal"
+	        android:layout_marginBottom="50dp"
+	        android:text="厂商加盟及系统升级中..."
+	        android:textColor="@color/huise"
+	        android:textSize="18sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

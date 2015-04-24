@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/reseda" >
+
+    <ListView
+        android:id="@+id/scrollview"
+        style="@style/listview_style"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:transcriptMode="alwaysScroll" >
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/write_function_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/btn_set_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/ic_photo_selector"
+            android:onClick="doClick" />
+
+        <ImageView
+            android:id="@+id/btn_set_voice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/voicesearch_imageview_selector"
+            android:onClick="doClick"
+            android:visibility="gone" />
+
+        <EditText
+            android:id="@+id/et_consult_content"
+            style="@style/u_edit_bg_single"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:maxHeight="80dp" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:onClick="doClick"
+            android:text="发送" />
+
+        <Button
+            android:id="@+id/voice_record_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/voice_record_btn"
+            android:onClick="doClick"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>
