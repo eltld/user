@@ -29,3 +29,4 @@ public class AboutUsActivity extends BasicActivity {
 		} 
 	}
 }
+
