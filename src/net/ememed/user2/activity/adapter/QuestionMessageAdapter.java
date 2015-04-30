@@ -10,23 +10,17 @@ import java.util.Date;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.jar.JarOutputStream;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import net.ememed.user2.R;
 import net.ememed.user2.activity.AlertDialog;
 import net.ememed.user2.activity.BaiduMapActivity;
-import net.ememed.user2.activity.BasicActivity;
-import net.ememed.user2.activity.ChatActivity;
 import net.ememed.user2.activity.ContextMenu;
-import net.ememed.user2.activity.DoctorDetailInfoActivity;
 import net.ememed.user2.activity.QuestionChatActivity;
 import net.ememed.user2.activity.ShowBigImage;
 import net.ememed.user2.entity.MessageBackupFieldEntry;
 import net.ememed.user2.entity.MessageSystemEntry;
 import net.ememed.user2.fragment.DoctorChatFragment;
+import net.ememed.user2.fragment.QuestionChatFragment;
 import net.ememed.user2.task.LoadImageTask;
 import net.ememed.user2.util.Conast;
 import net.ememed.user2.util.ImageCache;
@@ -35,15 +29,15 @@ import net.ememed.user2.util.SharePrefUtil;
 import net.ememed.user2.util.Util;
 import net.ememed.user2.widget.CircleImageView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.support.v4.app.Fragment;
-import android.text.Spannable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
@@ -51,15 +45,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.TextView.BufferType;
 import android.widget.Toast;
 
 import com.easemob.EMCallBack;
@@ -70,12 +63,10 @@ import com.easemob.chat.EMMessage.ChatType;
 import com.easemob.chat.EMMessage.Type;
 import com.easemob.chat.ImageMessageBody;
 import com.easemob.chat.LocationMessageBody;
-import com.easemob.chat.MessageBody;
 import com.easemob.chat.TextMessageBody;
 import com.easemob.chat.VoiceMessageBody;
 import com.easemob.exceptions.EaseMobException;
 import com.easemob.util.DateUtils;
-import com.easemob.util.EMLog;
 import com.easemob.util.LatLng;
 import com.google.gson.Gson;
 
@@ -424,7 +415,7 @@ public class QuestionMessageAdapter extends BaseAdapter {
 					intent.putExtra("title", context.getString(R.string.resend));
 					intent.putExtra("cancel", true);
 					intent.putExtra("position", position);
-					DoctorChatFragment.resendPos = position;
+					QuestionChatFragment.resendPos = position;
 					if (message.getType() == EMMessage.Type.TXT)
 						fragment.startActivityForResult(intent,
 								DoctorChatFragment.REQUEST_CODE_TEXT);

@@ -221,6 +221,7 @@ public class MyDoctorFragment extends Fragment implements Callback, OnClickListe
 
 	public void refresh() {
 		ll_empty.setVisibility(View.GONE);
+		ll_net_unavailable.setVisibility(View.GONE);
 		if (NetWorkUtils.detect(activity)) {// 判断是否连接网络
 			// mPullToRefreshLayout.setRefreshing(true);
 			if (adapter == null || adapter.getCount() == 0) {

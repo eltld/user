@@ -1145,12 +1145,14 @@ public class DoctorChatFragment extends Fragment implements Handler.Callback, On
 	private void resendMessage() {
 
 		EMMessage msg = null;
-		msg = conversation.getMessage(resendPos);
-		// msg.setBackSend(true);
-		msg.status = EMMessage.Status.CREATE;
-
-		adapter.refresh();
-		listView.setSelection(resendPos);
+//		msg = conversation.getMessage(resendPos);
+		if(adapter!=null){
+			msg = adapter.getItem(resendPos);
+			msg.status = EMMessage.Status.CREATE;
+			adapter.refresh();
+			listView.setSelection(resendPos);
+		}
+		
 
 	}
 
@@ -1770,6 +1772,16 @@ public class DoctorChatFragment extends Fragment implements Handler.Callback, On
 			
 		}
 
+	}
+	
+	
+	@Override
+	public void onDestroyView() {
+		// TODO Auto-generated method stub
+		super.onDestroyView();
+		if(conversation!=null){
+			conversation.resetUnsetMsgCount();
+		}
 	}
 
 	@Override

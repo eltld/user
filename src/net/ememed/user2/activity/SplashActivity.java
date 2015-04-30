@@ -262,11 +262,13 @@ public class SplashActivity extends BasicActivity {
 									CityTable cityTable = new CityTable();
 									cityConfigTable.clearTable();
 									cityTable.clearTable();
-									for (int i = 0; i < info.getData().size(); i++) {
-										cityConfigTable.saveSortName(info.getData()
-												.get(i));
-										cityTable.saveSortName(info.getData().get(i));
-									}
+									cityConfigTable.areaEntryToContentValues( info.getData());
+									cityTable.areaEntryToContentValues( info.getData());
+//									for (int i = 0; i < info.getData().size(); i++) {
+//										cityConfigTable.saveSortName(info.getData()
+//												.get(i));
+//										cityTable.saveSortName(info.getData().get(i));
+//									}
 								}
 							};
 

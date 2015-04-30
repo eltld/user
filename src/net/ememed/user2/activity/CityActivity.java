@@ -271,6 +271,7 @@ public class CityActivity extends BasicActivity implements BDLocationCallback {
 				SharePrefUtil.putString(Conast.CITY_NAME, sortModel.getName());
 				SharePrefUtil.commit();
 				finish();
+				showToast("保存成功");
 			}else{
 				showToast("定位失败请重新定位");
 			}

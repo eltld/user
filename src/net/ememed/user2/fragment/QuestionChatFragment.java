@@ -118,8 +118,8 @@ import de.greenrobot.event.util.IMManageTool;
 import de.greenrobot.event.util.TransformEMMessage;
 
 /** 聊天详情页 */
-public class QuestionChatFragment extends Fragment implements Handler.Callback, OnClickListener,
-		OnRefreshListener, BasicUIEvent ,LoadInterface{
+public class QuestionChatFragment extends Fragment implements Handler.Callback,
+		OnClickListener, OnRefreshListener, BasicUIEvent, LoadInterface {
 
 	public static final int REQUEST_EVALUATE = 100;
 	private static final int REQUEST_CODE_EMPTY_HISTORY = 2;
@@ -247,7 +247,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		System.out.println("evaluation = " + evaluation);
 
 		// 判断单聊还是群聊
-		chatType = activity.getIntent().getIntExtra("chatType", CHATTYPE_SINGLE);
+		chatType = activity.getIntent()
+				.getIntExtra("chatType", CHATTYPE_SINGLE);
 		if (chatType == CHATTYPE_SINGLE) { // 单聊
 			toChatUsername = getArguments().getString("tochat_userId");
 		} else {
@@ -255,15 +256,19 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 			toChatUsername = getArguments().getString("groupId");
 			group = EMGroupManager.getInstance().getGroup(toChatUsername);
 		}
-		if (EMChatManager.getInstance() != null && EMChatManager.getInstance().isConnected())
-			EMChatManager.getInstance().getConversation(SharePrefUtil.getString(Conast.MEMBER_ID));
+		if (EMChatManager.getInstance() != null
+				&& EMChatManager.getInstance().isConnected())
+			EMChatManager.getInstance().getConversation(
+					SharePrefUtil.getString(Conast.MEMBER_ID));
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
 		Logger.dout(TAG + " onCreateView");
 		View view = inflater.inflate(R.layout.root_layout, null);
-		FrameLayout mContentView = (FrameLayout) view.findViewById(R.id.mainView);
+		FrameLayout mContentView = (FrameLayout) view
+				.findViewById(R.id.mainView);
 		ll_view_content = (LinearLayout) LayoutInflater.from(activity).inflate(
 				R.layout.activity_questionchat, null);
 		initView(ll_view_content);
@@ -310,24 +315,30 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		btn_open_more = (Button) view.findViewById(R.id.btn_open_more);
 		// btn_open_more.setText("再次对" + doctor_name + "医生发起咨询");
 
-		mEditTextContent = (PasteEditText) view.findViewById(R.id.et_sendmessage);
+		mEditTextContent = (PasteEditText) view
+				.findViewById(R.id.et_sendmessage);
 		buttonSetModeKeyboard = view.findViewById(R.id.btn_set_mode_keyboard);
-		edittext_layout = (RelativeLayout) view.findViewById(R.id.edittext_layout);
-		evaluation_layout = (RelativeLayout) view.findViewById(R.id.evaluation_layout);
+		edittext_layout = (RelativeLayout) view
+				.findViewById(R.id.edittext_layout);
+		evaluation_layout = (RelativeLayout) view
+				.findViewById(R.id.evaluation_layout);
 		send_mind = (RelativeLayout) view.findViewById(R.id.send_mind);
 		evaluation_layout.setOnClickListener(this);
 		send_mind.setOnClickListener(this);
 		buttonSetModeVoice = view.findViewById(R.id.btn_set_mode_voice);
 		buttonSend = view.findViewById(R.id.btn_send);
 		buttonPressToSpeak = view.findViewById(R.id.btn_press_to_speak);
-		expressionContainer = (LinearLayout) view.findViewById(R.id.ll_face_container);
+		expressionContainer = (LinearLayout) view
+				.findViewById(R.id.ll_face_container);
 
-		btnContainer2 = (LinearLayout) view.findViewById(R.id.ll_btn_container_2);
+		btnContainer2 = (LinearLayout) view
+				.findViewById(R.id.ll_btn_container_2);
 		gv_server = (GridView) view.findViewById(R.id.gv_server);
 		gv_server.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
 				// go2BuyServiceAct(serverList.get(position));
 			}
 		});
@@ -350,7 +361,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 
 		tv_error.setOnClickListener(this);
 		// 动画资源文件,用于录制语音时
-		micImages = new Drawable[] { getResources().getDrawable(R.drawable.record_animate_01),
+		micImages = new Drawable[] {
+				getResources().getDrawable(R.drawable.record_animate_01),
 				getResources().getDrawable(R.drawable.record_animate_02),
 				getResources().getDrawable(R.drawable.record_animate_03),
 				getResources().getDrawable(R.drawable.record_animate_04),
@@ -372,7 +384,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		mEditTextContent.addTextChangedListener(new TextWatcher() {
 
 			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
 				if (!TextUtils.isEmpty(s)) {
 					// buttonSetModeVoice.setVisibility(View.GONE);
 					buttonSend.setVisibility(View.VISIBLE);
@@ -387,7 +400,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 			}
 
 			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
 			}
 
 			@Override
@@ -399,12 +413,15 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 
 	private void setUpView() {
 		// position = getIntent().getIntExtra("position", -1);
-		clipboard = (ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
-		manager = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+		clipboard = (ClipboardManager) activity
+				.getSystemService(Context.CLIPBOARD_SERVICE);
+		manager = (InputMethodManager) activity
+				.getSystemService(Context.INPUT_METHOD_SERVICE);
 		activity.getWindow().setSoftInputMode(
 				WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-		conversation = EMChatManager.getInstance().getConversation(toChatUsername);
+		conversation = EMChatManager.getInstance().getConversation(
+				toChatUsername);
 		// conversation.getAllMessages();
 		// 把此会话的未读数置为0
 		conversation.resetUnsetMsgCount();
@@ -458,23 +475,28 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		if (requestCode == REQUEST_CODE_CONTEXT_MENU) {
 			switch (resultCode) {
 			case RESULT_CODE_COPY: // 复制消息
-				EMMessage copyMsg = ((EMMessage) adapter.getItem(data.getIntExtra("position", -1)));
+				EMMessage copyMsg = ((EMMessage) adapter.getItem(data
+						.getIntExtra("position", -1)));
 				if (copyMsg.getType() == EMMessage.Type.IMAGE) {
-					ImageMessageBody imageBody = (ImageMessageBody) copyMsg.getBody();
+					ImageMessageBody imageBody = (ImageMessageBody) copyMsg
+							.getBody();
 					// 加上一个特定前缀，粘贴时知道这是要粘贴一个图片
 					clipboard.setText(COPY_IMAGE + imageBody.getLocalUrl());
 				} else {
 					// clipboard.setText(SmileUtils.getSmiledText(ChatActivity.this,
 					// ((TextMessageBody) copyMsg.getBody()).getMessage()));
-					clipboard.setText(((TextMessageBody) copyMsg.getBody()).getMessage());
+					clipboard.setText(((TextMessageBody) copyMsg.getBody())
+							.getMessage());
 				}
 				break;
 			case RESULT_CODE_DELETE: // 删除消息f
-				EMMessage deleteMsg = (EMMessage) adapter.getItem(data.getIntExtra("position", -1));
+				EMMessage deleteMsg = (EMMessage) adapter.getItem(data
+						.getIntExtra("position", -1));
 				conversation.removeMessage(deleteMsg.getMsgId());
 				adapter.deleteEMMessage(data.getIntExtra("position", -1));
 				adapter.refresh();
-				listView.setSelection(data.getIntExtra("position", adapter.getCount()) - 1);
+				listView.setSelection(data.getIntExtra("position",
+						adapter.getCount()) - 1);
 				break;
 
 			case RESULT_CODE_FORWARD: // 转发消息
@@ -531,7 +553,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 					if (pasteText.startsWith(COPY_IMAGE)) {
 						String extString = generateExtMessage();
 						// 把图片前缀去掉，还原成正常的path
-						sendPicture(pasteText.replace(COPY_IMAGE, ""), extString);
+						sendPicture(pasteText.replace(COPY_IMAGE, ""),
+								extString);
 					}
 				}
 			} else if (conversation.getMsgCount() > 0) {
@@ -564,10 +587,12 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 			try {
 				if (EMChatManager.getInstance() != null
 						&& EMChatManager.getInstance().isConnected()) {
-					if (!TextUtils.isEmpty(EMChatManager.getInstance().getCurrentUser())) {
+					if (!TextUtils.isEmpty(EMChatManager.getInstance()
+							.getCurrentUser())) {
 						InputMethodManager imm = (InputMethodManager) activity
 								.getSystemService(Context.INPUT_METHOD_SERVICE);
-						imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+						imm.toggleSoftInput(0,
+								InputMethodManager.HIDE_NOT_ALWAYS);
 						sendText(s, obj);
 					} else {
 					}
@@ -620,7 +645,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		} else if (id == R.id.evaluation_layout) {
 			if (isComment) {
 				// 评价服务
-				Intent intent = new Intent(getActivity(), EvaluateServiceActivity.class);
+				Intent intent = new Intent(getActivity(),
+						EvaluateServiceActivity.class);
 				intent.putExtra("doctorId", toChatUsername);
 				intent.putExtra("doctorName", doctor_name);
 				intent.putExtra("portrait", doctor_avatar);
@@ -663,20 +689,23 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 			params.put("evaluation", evaluation);
 			params.put("evaluation_content", evaluation_content);
 			params.put("question_id", questionid);
-			MyApplication.volleyHttpClient.postWithParams(HttpUtil.set_evaluation,
-					EvaluationEntity.class, params, new Response.Listener() {
+			MyApplication.volleyHttpClient.postWithParams(
+					HttpUtil.set_evaluation, EvaluationEntity.class, params,
+					new Response.Listener() {
 
 						@Override
 						public void onResponse(Object arg0) {
 							// TODO Auto-generated method stub
 							activity.destroyDialog();
 							EvaluationEntity entity = (EvaluationEntity) arg0;
-							if (entity == null || !entity.getSuccess().equals("1"))
+							if (entity == null
+									|| !entity.getSuccess().equals("1"))
 								return;
 
 							isComment = false;
 							comment_tx.setText("已评价");
-							Intent intent = new Intent(getActivity(), EvaluateResultActivity.class);
+							Intent intent = new Intent(getActivity(),
+									EvaluateResultActivity.class);
 							intent.putExtra("portrait", doctor_avatar);
 							intent.putExtra("doctorId", toChatUsername);
 							intent.putExtra("name", doctor_name);
@@ -705,7 +734,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 	 */
 	public String generateExtMessage() {
 		JsonObject obj = new JsonObject();
-		if (null != data && null != data.getOPEN_ORDER() && data.getOPEN_ORDER().size() > 0) {
+		if (null != data && null != data.getOPEN_ORDER()
+				&& data.getOPEN_ORDER().size() > 0) {
 			// "ISSYSTEMMSG": "0", //是否系统消息（1是，0为否）
 			// "CHANNEL": "android", //来源（android|ios）
 			// "ORDERID": "123", //订单ID
@@ -779,18 +809,23 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 						}
 
 						if (null != data) {
-							List<OrderListEntry> open_ORDER = data.getOPEN_ORDER();
+							List<OrderListEntry> open_ORDER = data
+									.getOPEN_ORDER();
 							if (open_ORDER != null && open_ORDER.size() > 0) {// 有订单
 								activity.setTitle(data.getREALNAME() + "医生");
 
 								// setBottomByOpenOrder(true);
-								OrderListEntry orderListEntry1 = data.getOPEN_ORDER().get(
-										data.getOPEN_ORDER().size() - 1);
-								System.out.println("ORDERID >>= " + orderListEntry1.getORDERID());
-								for (Iterator iterator = open_ORDER.iterator(); iterator.hasNext();) {
+								OrderListEntry orderListEntry1 = data
+										.getOPEN_ORDER()
+										.get(data.getOPEN_ORDER().size() - 1);
+								System.out.println("ORDERID >>= "
+										+ orderListEntry1.getORDERID());
+								for (Iterator iterator = open_ORDER.iterator(); iterator
+										.hasNext();) {
 									OrderListEntry orderListEntry = (OrderListEntry) iterator
 											.next();
-									if ("15".equals(orderListEntry.getORDERTYPE())) {
+									if ("15".equals(orderListEntry
+											.getORDERTYPE())) {
 										isOpenPrivateDoctor = true;
 										break;
 									}
@@ -838,7 +873,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 	private void initServer(MemberInfo memberInfo) {
 		// TODO Auto-generated method stub
 		serverList.clear();
-		DoctorServiceEntry offer_SERVICE = memberInfo.getData().getOFFER_SERVICE();
+		DoctorServiceEntry offer_SERVICE = memberInfo.getData()
+				.getOFFER_SERVICE();
 		try {
 			OfferServiceEntry2 offer_TEXT = offer_SERVICE.getOFFER_TEXT();
 			if (offer_TEXT.getIS_OFFER() == 1) {// 图文
@@ -868,14 +904,16 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		} catch (Exception e) {
 		}
 		try {
-			OfferServiceEntry offer_SHANGMEN = offer_SERVICE.getOFFER_SHANGMEN();
+			OfferServiceEntry offer_SHANGMEN = offer_SERVICE
+					.getOFFER_SHANGMEN();
 			if (offer_SHANGMEN.getIS_OFFER() == 1) {// 上门
 				serverList.add(SHANGMEN);
 			}
 		} catch (Exception e) {
 		}
 		try {
-			OfferServicePacketEntry offer_PACKET = offer_SERVICE.getOFFER_PACKET();
+			OfferServicePacketEntry offer_PACKET = offer_SERVICE
+					.getOFFER_PACKET();
 			if ("1".equals(offer_PACKET.getIS_OFFER())) {// 签约私人医生
 				serverList.add(PRIVATE_DOCTOR);
 			}
@@ -911,9 +949,12 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			convertView = View.inflate(getActivity(), R.layout.server_item, null);
-			ImageView iv_icon = (ImageView) convertView.findViewById(R.id.iv_icon);
-			TextView tv_desc = (TextView) convertView.findViewById(R.id.tv_desc);
+			convertView = View.inflate(getActivity(), R.layout.server_item,
+					null);
+			ImageView iv_icon = (ImageView) convertView
+					.findViewById(R.id.iv_icon);
+			TextView tv_desc = (TextView) convertView
+					.findViewById(R.id.tv_desc);
 			int type = serverList.get(position);
 			switch (type) {
 			case TEXT:
@@ -962,14 +1003,16 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		List<OrderListEntry> open_ORDER = data.getOPEN_ORDER();
 
 		for (Iterator iterator = open_ORDER.iterator(); iterator.hasNext();) {
-			final OrderListEntry orderListEntry = (OrderListEntry) iterator.next();
+			final OrderListEntry orderListEntry = (OrderListEntry) iterator
+					.next();
 			View v1 = View.inflate(activity, R.layout.popu_item, null);
 			String ordertype = orderListEntry.getORDERTYPE();
 			ImageView iv_icon = (ImageView) v1.findViewById(R.id.iv_icon);
 			TextView tv_message = (TextView) v1.findViewById(R.id.tv_message);
 			/**
-			 * '1'=>'文字咨询', '2'=>'预约通话', '3'=>'名医加号', '4'=>'上门会诊', '5'=>'院内陪诊', '7'=>'免费挂号',
-			 * '11'=>'体检报告解读', '12'=>'个人健康季评', '14'=>'住院直通车', '15'=>'签约私人医生服务购买', '16'=>'其他服务'
+			 * '1'=>'文字咨询', '2'=>'预约通话', '3'=>'名医加号', '4'=>'上门会诊', '5'=>'院内陪诊',
+			 * '7'=>'免费挂号', '11'=>'体检报告解读', '12'=>'个人健康季评', '14'=>'住院直通车',
+			 * '15'=>'签约私人医生服务购买', '16'=>'其他服务'
 			 */
 
 			String type = orderListEntry.getORDERTYPE();
@@ -1047,8 +1090,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 				EMChatManager.getInstance().login(
 						SharePrefUtil.getString(Conast.MEMBER_ID),
 						MD5.getMD5(SharePrefUtil.getString(Conast.MEMBER_ID)
-								+ SharePrefUtil.getString(Conast.USER_Name) + "ememedim"),
-						new EMCallBack() {
+								+ SharePrefUtil.getString(Conast.USER_Name)
+								+ "ememedim"), new EMCallBack() {
 
 							@Override
 							public void onSuccess() {
@@ -1067,8 +1110,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 							@Override
 							public void onError(int code, final String message) {
 								MyApplication.isLoginIMing = false;
-								Logger.dout(TAG + " EMChatManager code:" + code + "onError:"
-										+ message);
+								Logger.dout(TAG + " EMChatManager code:" + code
+										+ "onError:" + message);
 
 								if (code == -1) {// code = -1
 									// 有可能是应用的环信value出错，有可能是该帐号没注册到环信服务器，所以重新调用接口，让后台把该帐号注册到环信
@@ -1096,11 +1139,13 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 	 */
 	public void selectPicFromCamera() {
 		cameraFile = new File(PathUtil.getInstance().getImagePath(),
-				SharePrefUtil.getString(Conast.MEMBER_ID) + System.currentTimeMillis() + ".jpg");
+				SharePrefUtil.getString(Conast.MEMBER_ID)
+						+ System.currentTimeMillis() + ".jpg");
 		cameraFile.getParentFile().mkdirs();
 		startActivityForResult(
-				new Intent(MediaStore.ACTION_IMAGE_CAPTURE).putExtra(MediaStore.EXTRA_OUTPUT,
-						Uri.fromFile(cameraFile)), REQUEST_CODE_CAMERA);
+				new Intent(MediaStore.ACTION_IMAGE_CAPTURE).putExtra(
+						MediaStore.EXTRA_OUTPUT, Uri.fromFile(cameraFile)),
+				REQUEST_CODE_CAMERA);
 	}
 
 	/**
@@ -1113,7 +1158,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 			intent.setType("image/*");
 
 		} else {
-			intent = new Intent(Intent.ACTION_PICK,
+			intent = new Intent(
+					Intent.ACTION_PICK,
 					android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
 		}
 		startActivityForResult(intent, REQUEST_CODE_LOCAL);
@@ -1163,13 +1209,14 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 	 * @param length
 	 * @param isResend
 	 */
-	private void sendVoice(String filePath, String fileName, String length, boolean isResend,
-			String extStr) {
+	private void sendVoice(String filePath, String fileName, String length,
+			boolean isResend, String extStr) {
 		if (!(new File(filePath).exists())) {
 			return;
 		}
 		try {
-			final EMMessage message = EMMessage.createSendMessage(EMMessage.Type.VOICE);
+			final EMMessage message = EMMessage
+					.createSendMessage(EMMessage.Type.VOICE);
 			String to = toChatUsername;
 			message.setReceipt(to);
 			message.setFrom(SharePrefUtil.getString(Conast.MEMBER_ID));
@@ -1177,7 +1224,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 				message.setAttribute("ext", extStr);
 
 			int len = Integer.parseInt(length);
-			VoiceMessageBody body = new VoiceMessageBody(new File(filePath), len);
+			VoiceMessageBody body = new VoiceMessageBody(new File(filePath),
+					len);
 			message.addBody(body);
 
 			adapter.addEMMessage(message);
@@ -1201,7 +1249,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		int rowId = 0;
 		String to = toChatUsername;
 		// create and add image message in view
-		final EMMessage message = EMMessage.createSendMessage(EMMessage.Type.IMAGE);
+		final EMMessage message = EMMessage
+				.createSendMessage(EMMessage.Type.IMAGE);
 		message.setReceipt(to);
 		message.setFrom(SharePrefUtil.getString(Conast.MEMBER_ID));
 		if (!TextUtils.isEmpty(extStr))
@@ -1224,7 +1273,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 	 */
 	private void sendPicByUri(Uri selectedImage) {
 		// String[] filePathColumn = { MediaStore.Images.Media.DATA };
-		Cursor cursor = activity.getContentResolver().query(selectedImage, null, null, null, null);
+		Cursor cursor = activity.getContentResolver().query(selectedImage,
+				null, null, null, null);
 		cursor.moveToFirst();
 		int columnIndex = cursor.getColumnIndex("_data");
 		String picturePath = cursor.getString(columnIndex);
@@ -1247,10 +1297,12 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 	 * @param imagePath
 	 * @param locationAddress
 	 */
-	private void sendLocationMsg(double latitude, double longitude, String imagePath,
-			String locationAddress) {
-		EMMessage message = EMMessage.createSendMessage(EMMessage.Type.LOCATION);
-		LocationMessageBody locBody = new LocationMessageBody(locationAddress, latitude, longitude);
+	private void sendLocationMsg(double latitude, double longitude,
+			String imagePath, String locationAddress) {
+		EMMessage message = EMMessage
+				.createSendMessage(EMMessage.Type.LOCATION);
+		LocationMessageBody locBody = new LocationMessageBody(locationAddress,
+				latitude, longitude);
 		message.addBody(locBody);
 		message.setReceipt(toChatUsername);
 		message.setFrom(SharePrefUtil.getString(Conast.MEMBER_ID));
@@ -1267,12 +1319,14 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 	private void resendMessage() {
 
 		EMMessage msg = null;
-		msg = conversation.getMessage(resendPos);
-		// msg.setBackSend(true);
-		msg.status = EMMessage.Status.CREATE;
-
-		adapter.refresh();
-		listView.setSelection(resendPos);
+		// msg = conversation.getMessage(resendPos);
+		if (adapter != null) {
+			msg = adapter.getItem(resendPos);
+			// msg.setBackSend(true);
+			msg.status = EMMessage.Status.CREATE;
+			adapter.refresh();
+			listView.setSelection(resendPos);
+		}
 
 	}
 
@@ -1358,13 +1412,15 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 			switch (event.getAction()) {
 			case MotionEvent.ACTION_DOWN:
 				if (!Util.isExitsSdcard()) {
-					Toast.makeText(activity, "发送语音需要sdcard支持！", Toast.LENGTH_SHORT).show();
+					Toast.makeText(activity, "发送语音需要sdcard支持！",
+							Toast.LENGTH_SHORT).show();
 					return false;
 				}
 				try {
 					v.setPressed(true);
 					recordingContainer.setVisibility(View.VISIBLE);
-					recordingHint.setText(getString(R.string.move_up_to_cancel));
+					recordingHint
+							.setText(getString(R.string.move_up_to_cancel));
 					recordingHint.setBackgroundColor(Color.TRANSPARENT);
 					voiceRecorder.startRecording(null, toChatUsername,
 							activity.getApplicationContext());
@@ -1372,17 +1428,22 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 					e.printStackTrace();
 					v.setPressed(false);
 					recordingContainer.setVisibility(View.INVISIBLE);
-					Toast.makeText(activity, R.string.recoding_fail, Toast.LENGTH_SHORT).show();
+					Toast.makeText(activity, R.string.recoding_fail,
+							Toast.LENGTH_SHORT).show();
 					return false;
 				}
 				return true;
 			case MotionEvent.ACTION_MOVE: {
 				if (event.getY() < 0) {
-					recordingHint.setText(getString(R.string.release_to_cancel));
-					recordingHint.setBackgroundResource(R.drawable.recording_text_hint_bg);
-					micImage.setImageDrawable(getResources().getDrawable(R.drawable.record_delete));
+					recordingHint
+							.setText(getString(R.string.release_to_cancel));
+					recordingHint
+							.setBackgroundResource(R.drawable.recording_text_hint_bg);
+					micImage.setImageDrawable(getResources().getDrawable(
+							R.drawable.record_delete));
 				} else {
-					recordingHint.setText(getString(R.string.move_up_to_cancel));
+					recordingHint
+							.setText(getString(R.string.move_up_to_cancel));
 					recordingHint.setBackgroundColor(Color.TRANSPARENT);
 					micImage.setImageDrawable(micImages[0]);
 				}
@@ -1401,11 +1462,13 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 						if (length > 0) {
 							String obj = generateExtMessage();
 							sendVoice(voiceRecorder.getVoiceFilePath(),
-									voiceRecorder.getVoiceFileName(toChatUsername),
+									voiceRecorder
+											.getVoiceFileName(toChatUsername),
 									Integer.toString(length), false, obj);
 						}
 					} catch (Exception e) {
-						Toast.makeText(activity, "发送失败，请检测服务器是否连接", Toast.LENGTH_SHORT).show();
+						Toast.makeText(activity, "发送失败，请检测服务器是否连接",
+								Toast.LENGTH_SHORT).show();
 					}
 				}
 				return true;
@@ -1443,7 +1506,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		if (null != adapter) {
 			adapter.refresh();
 		}
-		if (EMChatManager.getInstance() != null || EMChatManager.getInstance().isConnected()) {
+		if (EMChatManager.getInstance() != null
+				|| EMChatManager.getInstance().isConnected()) {
 			if (TextUtils.isEmpty(EMChatManager.getInstance().getCurrentUser()))
 				loginIM();
 		} else {
@@ -1457,8 +1521,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 	private void hideKeyboard() {
 		if (activity.getWindow().getAttributes().softInputMode != WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN) {
 			if (activity.getCurrentFocus() != null)
-				manager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(),
-						InputMethodManager.HIDE_NOT_ALWAYS);
+				manager.hideSoftInputFromWindow(activity.getCurrentFocus()
+						.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		}
 	}
 
@@ -1476,38 +1540,53 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		}
 
 		if (SharePrefUtil.getBoolean(Conast.LOGIN)
-				&& !TextUtils.isEmpty(SharePrefUtil.getString(Conast.MEMBER_ID))) {
+				&& !TextUtils
+						.isEmpty(SharePrefUtil.getString(Conast.MEMBER_ID))) {
 			MyApplication.isLoginIMing = true;
-			if (null == EMChatManager.getInstance() || !EMChatManager.getInstance().isConnected()) {
+			if (null == EMChatManager.getInstance()
+					|| !EMChatManager.getInstance().isConnected()) {
 				new Thread() {
 					public void run() {
 						try {
 							// 调用sdk登录方法登录聊天服务器
-							EMChatManager.getInstance().login(
-									SharePrefUtil.getString(Conast.MEMBER_ID),
-									MD5.getMD5(SharePrefUtil.getString(Conast.MEMBER_ID)
-											+ SharePrefUtil.getString(Conast.USER_Name)
-											+ "ememedim"), new EMCallBack() {
+							EMChatManager
+									.getInstance()
+									.login(SharePrefUtil
+											.getString(Conast.MEMBER_ID),
+											MD5.getMD5(SharePrefUtil
+													.getString(Conast.MEMBER_ID)
+													+ SharePrefUtil
+															.getString(Conast.USER_Name)
+													+ "ememedim"),
+											new EMCallBack() {
 
-										@Override
-										public void onSuccess() {
-											MyApplication.isLoginIMing = false;
-											mHandler.sendEmptyMessage(IResult.LOGIN);
-										}
+												@Override
+												public void onSuccess() {
+													MyApplication.isLoginIMing = false;
+													mHandler.sendEmptyMessage(IResult.LOGIN);
+												}
 
-										@Override
-										public void onProgress(int progress, String status) {
-											Logger.dout(TAG + " EMChatManager onProgress");
-										}
+												@Override
+												public void onProgress(
+														int progress,
+														String status) {
+													Logger.dout(TAG
+															+ " EMChatManager onProgress");
+												}
 
-										@Override
-										public void onError(int code, final String message) {
-											MyApplication.isLoginIMing = false;
-											Toast.makeText(getActivity(), message, 1).show();
-											Logger.dout(TAG + " EMChatManager code:" + code
-													+ "onError:" + message);
-										}
-									});
+												@Override
+												public void onError(int code,
+														final String message) {
+													MyApplication.isLoginIMing = false;
+													Toast.makeText(
+															getActivity(),
+															message, 1).show();
+													Logger.dout(TAG
+															+ " EMChatManager code:"
+															+ code + "onError:"
+															+ message);
+												}
+											});
 
 							activity.registerIMReceiver();
 
@@ -1530,7 +1609,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		public void onScrollStateChanged(AbsListView view, int scrollState) {
 			switch (scrollState) {
 			case OnScrollListener.SCROLL_STATE_IDLE:
-				if (view.getFirstVisiblePosition() == 0 && !isloading && haveMoreData) {
+				if (view.getFirstVisiblePosition() == 0 && !isloading
+						&& haveMoreData) {
 					loadmorePB.setVisibility(View.VISIBLE);
 					// sdk初始化加载的聊天记录为20条，到顶时去db里获取更多
 					List<EMMessage> messages;
@@ -1538,11 +1618,11 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 						// 获取更多messges，调用此方法的时候从db获取的messages
 						// sdk会自动存入到此conversation中
 						if (chatType == CHATTYPE_SINGLE)
-							messages = conversation.loadMoreMsgFromDB(
-									adapter.getItem(0).getMsgId(), pagesize);
+							messages = conversation.loadMoreMsgFromDB(adapter
+									.getItem(0).getMsgId(), pagesize);
 						else
-							messages = conversation.loadMoreGroupMsgFromDB(adapter.getItem(0)
-									.getMsgId(), pagesize);
+							messages = conversation.loadMoreGroupMsgFromDB(
+									adapter.getItem(0).getMsgId(), pagesize);
 					} catch (Exception e1) {
 						loadmorePB.setVisibility(View.GONE);
 						return;
@@ -1568,8 +1648,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 		}
 
 		@Override
-		public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
-				int totalItemCount) {
+		public void onScroll(AbsListView view, int firstVisibleItem,
+				int visibleItemCount, int totalItemCount) {
 
 		}
 	}
@@ -1728,7 +1808,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 	public void receiveEventAndSendMsg(MessageSystemEvent event) {
 		// ordertype订单类型：'1'=>"图文咨询",'2'=>"预约通话",'3'=>"名医加号",'4'=>"上门会诊",'14'=>"住院直通车",'11'=>"体检报告解读",'15'=>"签约私人医生服务",'16'=>"自定义订单"
 		Logger.dout(TAG + " onEvent  MessageSystemEvent");
-		if (null == EMChatManager.getInstance() || !EMChatManager.getInstance().isConnected()) {
+		if (null == EMChatManager.getInstance()
+				|| !EMChatManager.getInstance().isConnected()) {
 			UICore.eventTask(this, activity, IResult.SEND_SYS_MSG, null, event);
 		} else {
 			// getMemberInfo();
@@ -1743,17 +1824,20 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 				new Thread() {
 					public void run() {
 						ArrayList<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-						params.add(new BasicNameValuePair("token", SharePrefUtil
-								.getString(Conast.ACCESS_TOKEN)));
+						params.add(new BasicNameValuePair("token",
+								SharePrefUtil.getString(Conast.ACCESS_TOKEN)));
 						params.add(new BasicNameValuePair("channel", "android"));
-						params.add(new BasicNameValuePair("memberid", SharePrefUtil
-								.getString(Conast.MEMBER_ID)));
+						params.add(new BasicNameValuePair("memberid",
+								SharePrefUtil.getString(Conast.MEMBER_ID)));
 						params.add(new BasicNameValuePair("utype", "user"));
 						try {
-							String result = HttpUtil.getString(HttpUtil.URI + HttpUtil.reg_to_im,
-									params, HttpUtil.POST);
+							String result = HttpUtil
+									.getString(HttpUtil.URI
+											+ HttpUtil.reg_to_im, params,
+											HttpUtil.POST);
 							Gson gson = new Gson();
-							ResultInfo info = gson.fromJson(result, ResultInfo.class);
+							ResultInfo info = gson.fromJson(result,
+									ResultInfo.class);
 							if (null != info && info.getSuccess() == 1) {
 								loginIM();
 							}
@@ -1781,7 +1865,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 								new DialogInterface.OnClickListener() {
 
 									@Override
-									public void onClick(DialogInterface dialog, int which) {
+									public void onClick(DialogInterface dialog,
+											int which) {
 										dialog.dismiss();
 										logout();
 									}
@@ -1790,7 +1875,8 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 				dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
 
 					@Override
-					public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+					public boolean onKey(DialogInterface dialog, int keyCode,
+							KeyEvent event) {
 						if (KeyEvent.KEYCODE_BACK == keyCode) {
 							return true;
 						}
@@ -1818,12 +1904,14 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 					params.add(new BasicNameValuePair("userid", SharePrefUtil
 							.getString(Conast.MEMBER_ID)));
 					params.add(new BasicNameValuePair("channel", "android"));
-					params.add(new BasicNameValuePair("imei", PublicUtil.getDeviceUuid(activity)));
+					params.add(new BasicNameValuePair("imei", PublicUtil
+							.getDeviceUuid(activity)));
 					params.add(new BasicNameValuePair("appversion", PublicUtil
 							.getVersionName(activity)));
 
 					try {
-						HttpUtil.getString(HttpUtil.URI + HttpUtil.logout, params, HttpUtil.POST);
+						HttpUtil.getString(HttpUtil.URI + HttpUtil.logout,
+								params, HttpUtil.POST);
 					} catch (IOException e) {
 						e.printStackTrace();
 
@@ -1878,35 +1966,42 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 
 							listView.onRefreshComplete();
 							IMMessageInfo imInfo = (IMMessageInfo) arg0;
-							TransformEMMessage
-							.getInstance().setLoadInterface(QuestionChatFragment.this);
+							TransformEMMessage.getInstance().setLoadInterface(
+									QuestionChatFragment.this);
 							if (chatPage > 0) {
-								List<EMMessage> imData = TransformEMMessage.getInstance()
-										.addEMMessageList(imInfo,
-												SharePrefUtil.getString(Conast.MEMBER_ID));
-								
-								
-								if(adapter==null){
-									adapter = new QuestionMessageAdapter(QuestionChatFragment.this,
-											activity, toChatUsername, chatType, doctor_avatar, orderid,
-											imData);
+								List<EMMessage> imData = TransformEMMessage
+										.getInstance()
+										.addEMMessageList(
+												imInfo,
+												SharePrefUtil
+														.getString(Conast.MEMBER_ID));
+
+								if (adapter == null) {
+									adapter = new QuestionMessageAdapter(
+											QuestionChatFragment.this,
+											activity, toChatUsername, chatType,
+											doctor_avatar, orderid, imData);
 									listView.setAdapter(adapter);
 									listView.setSelection(listView.getCount() - 1);
-								}else{
+								} else {
 									adapter.addEMMessagelist(imData);
 								}
-								
+
 							} else {
 
 								// 处理分页消息，
-								List<EMMessage> imData = TransformEMMessage.getInstance()
-										.transformEM(imInfo,
-												SharePrefUtil.getString(Conast.MEMBER_ID),
+								List<EMMessage> imData = TransformEMMessage
+										.getInstance()
+										.transformEM(
+												imInfo,
+												SharePrefUtil
+														.getString(Conast.MEMBER_ID),
 												toChatUsername, orderid);
 
-								adapter = new QuestionMessageAdapter(QuestionChatFragment.this,
-										activity, toChatUsername, chatType, doctor_avatar, orderid,
-										imData);
+								adapter = new QuestionMessageAdapter(
+										QuestionChatFragment.this, activity,
+										toChatUsername, chatType,
+										doctor_avatar, orderid, imData);
 								// 显示消息
 								listView.setAdapter(adapter);
 								listView.setSelection(listView.getCount() - 1);
@@ -1925,10 +2020,19 @@ public class QuestionChatFragment extends Fragment implements Handler.Callback, 
 					});
 		} else {
 
-			Toast.makeText(getActivity(), "无网络，请检查网络设置", Toast.LENGTH_LONG).show();
+			Toast.makeText(getActivity(), "无网络，请检查网络设置", Toast.LENGTH_LONG)
+					.show();
 
 		}
 
+	}
+	@Override
+	public void onDestroyView() {
+		// TODO Auto-generated method stub
+		super.onDestroyView();
+		if(conversation!=null){
+			conversation.resetUnsetMsgCount();
+		}
 	}
 
 	@Override

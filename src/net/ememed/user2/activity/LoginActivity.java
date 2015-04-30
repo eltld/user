@@ -103,11 +103,13 @@ public class LoginActivity extends BasicActivity implements PlatformActionListen
 	private DoctorEntry entry;
 	private Button btn_login;
 	IMManageTool tool;
+	private String account;
 
 	@Override
 	protected void onCreateContent(Bundle savedInstanceState) {
 		super.onCreateContent(savedInstanceState);
 		ShareSDK.initSDK(this);
+		account = getIntent().getStringExtra("user_mobile");
 		origin_ui = getIntent().getStringExtra("origin");
 		current_service = getIntent().getStringExtra("current_service");
 		entry = (DoctorEntry) getIntent().getSerializableExtra("entry");
@@ -138,9 +140,14 @@ public class LoginActivity extends BasicActivity implements PlatformActionListen
 		}
 		//TODO
 
+		
 		btn_login = (Button) findViewById(R.id.btn_login);
 
 		etAccount = (EditText) findViewById(R.id.et_account);
+		if(!TextUtils.isEmpty(account)){
+			etAccount.setText(account);
+		}
+		
 		etPwd = (EditText) findViewById(R.id.et_pwd);
 		btn_look_for_pwd = (TextView) findViewById(R.id.btn_look_for_pwd);
 		// btn_look_for_pwd.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG); // 下划线

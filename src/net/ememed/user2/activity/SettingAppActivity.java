@@ -152,6 +152,7 @@ public class SettingAppActivity extends BasicActivity implements BasicUIEvent {
 
 				Intent intent = new Intent(SettingAppActivity.this, LoginActivity.class);
 				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				intent.putExtra("user_mobile", SharePrefUtil.getString(Conast.USER_MOBILE));
 				SharePrefUtil.putBoolean(Conast.LOGIN, false);
 				SharePrefUtil.putString(Conast.MEMBER_ID, "");
 				SharePrefUtil.putString(Conast.USER_Name, "");

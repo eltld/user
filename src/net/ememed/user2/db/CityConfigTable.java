@@ -22,10 +22,12 @@ public class CityConfigTable {
 	private final static String province_name = "province_name";
 	
 	private DBManagerImpl db = null;
+	private  DBManager db_msg = null;
 	
 	public CityConfigTable() {
 		if (db == null) {
 			db = DBManager.get();
+			db_msg = DBManager.get();
 		}
 		if (!db.isTableExits(db.getConnection(), TABLE_CITY)) {
 			createCityTable();
@@ -151,8 +153,35 @@ public class CityConfigTable {
 		}
 	}
 	
+	
+	public void areaEntryToContentValues(List<AreaEntry> data){
+		List<ContentValues> conData = new ArrayList<ContentValues>();
+		AreaEntry area_result ;
+		ContentValues values = null;
+		for (int j = 0; j < data.size(); j++) {
+			area_result = data.get(j);
+			if (null != area_result.getCITY()) {
+				for (int i = 0; i < area_result.getCITY().size(); i++) {
+					values = new ContentValues();
+					values.put(province_id, area_result.getID());
+					values.put(province_name, area_result.getAREANAME());
+					values.put(city_id, area_result.getCITY().get(i).getID());
+					values.put(city_name, area_result.getCITY().get(i).getAREANAME());
+					conData.add(values);
+				}
+			}
+		}
+		db.saveAll(db.getConnection(), TABLE_CITY, conData);
+	}
+	
+	
+	
+	
+	
+	
 	public void clearTable() {
 		db.delete(db.getConnection(), TABLE_CITY, null, null);
+		
 	}
 	
 	

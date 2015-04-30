@@ -33,6 +33,8 @@ import net.ememed.user2.entity.NewsTypeInfo;
 import net.ememed.user2.entity.SearchDoctorAll;
 import net.ememed.user2.entity.ServiceListEntry;
 import net.ememed.user2.entity.ServiceListInfo;
+import net.ememed.user2.entity.StaticVariableBean;
+import net.ememed.user2.entity.VariableBean;
 import net.ememed.user2.network.HttpUtil;
 import net.ememed.user2.request.UserPreferenceWrapper;
 import net.ememed.user2.util.AppUtils;
@@ -80,6 +82,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.Response;
+import com.android.volley.Response.ErrorListener;
+import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.google.gson.Gson;
 import com.nostra13.universalimageloader.core.assist.FailReason;
@@ -155,7 +159,7 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 		activity = (MainActivity) getActivity();
 		UICore.eventTask(this, activity, EXEU_GET_DATA, null, null);// 加载数据入口
 		getNewsType();
-
+		
 	}
 
 	@Override
@@ -177,7 +181,7 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 		View view = inflater.inflate(R.layout.root_layout, null);
 		mContentView = (FrameLayout) view.findViewById(R.id.mainView);
 		addListener();
-
+		getIntroduceList();
 		return view;
 	}
 
@@ -212,21 +216,22 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 		ll_guahao_top.setOnClickListener(this);
 		ll_search_box = (LinearLayout) ll_view_content
 				.findViewById(R.id.ll_search_box);
-//		ll_search_box.setOnClickListener(this);
-//		ll_shangmen_top = (LinearLayout) ll_view_content
-//				.findViewById(R.id.ll_shangmen_top);
-//		ll_shangmen_top.setOnClickListener(this);
+		// ll_search_box.setOnClickListener(this);
+		// ll_shangmen_top = (LinearLayout) ll_view_content
+		// .findViewById(R.id.ll_shangmen_top);
+		// ll_shangmen_top.setOnClickListener(this);
 		ll_private_top = (LinearLayout) ll_view_content
 				.findViewById(R.id.ll_private_top);
 		ll_private_top.setOnClickListener(this);
 		ll_zhuyuan_top = (LinearLayout) ll_view_content
 				.findViewById(R.id.ll_zhuyuan_top);
 		ll_zhuyuan_top.setOnClickListener(this);
-//		ll_notice_custom_top = (LinearLayout) ll_view_content
-//				.findViewById(R.id.ll_notice_custom_top);
-//		ll_notice_custom_top.setOnClickListener(this);
-		 ll_content =(LinearLayout) ll_view_content.findViewById(R.id.ll_content);
-		 ll_content.setOnClickListener(this);
+		// ll_notice_custom_top = (LinearLayout) ll_view_content
+		// .findViewById(R.id.ll_notice_custom_top);
+		// ll_notice_custom_top.setOnClickListener(this);
+		ll_content = (LinearLayout) ll_view_content
+				.findViewById(R.id.ll_content);
+		ll_content.setOnClickListener(this);
 		
 		// ll_notice_custom_top = (LinearLayout) ll_view_content
 		// .findViewById(R.id.ll_notice_custom_top);
@@ -309,7 +314,7 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 		et_disease_keyword = (TextView) ll_view_content
 				.findViewById(R.id.et_disease_keyword);
 		et_disease_keyword.setHintTextColor(0xffafafaf);
-//		et_disease_keyword.setOnClickListener(this);
+		// et_disease_keyword.setOnClickListener(this);
 		// et_disease_keyword.addTextChangedListener(new TextWatcher() {
 		//
 		// @Override
@@ -473,8 +478,13 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 					}
 
 					// //缓存保存
-					table.clearTable();
-					table.saveAdsList(data);
+//					new Thread() {
+//						public void run() {
+//							table.clearTable();
+//							table.saveAdsList(data);
+//						};
+//					}.start();
+
 				}
 			} else {
 				activity.showToast(info.getErrormsg());
@@ -485,6 +495,34 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 			ServiceListInfo serviceListInfo = (ServiceListInfo) msg.obj;
 			List<ServiceListEntry> list = serviceListInfo.getData();
 			serviceContent = new ArrayList<ServiceListEntry>(list);
+			break;
+		case IResult.GET_STATIC_VARIABLE:
+			StaticVariableBean svb=(StaticVariableBean) msg.obj;
+			List<VariableBean> lvb=svb.getData();
+			for (int i = 0; i < lvb.size(); i++) {
+				VariableBean vb=lvb.get(i);
+				
+				String value=vb.getSTITLE()+","+vb.getSVALUE();
+				
+				if(vb.getSKEY().equals("VAR_20002")){
+					SharePrefUtil.putString(Conast.ORDER_CALL,value);
+				}
+				else if(vb.getSKEY().equals("VAR_20004")){
+					SharePrefUtil.putString(Conast.ORDER_ADD_NULBER,value);
+				}
+				else if(vb.getSKEY().equals("VAR_20005")){
+					SharePrefUtil.putString(Conast.ORDER_HOSPITAL,value);
+				}
+				else if(vb.getSKEY().equals("VAR_20006")){
+					SharePrefUtil.putString(Conast.FREE_CHAR,value);
+				}
+				else if(vb.getSKEY().equals("VAR_20001")){
+					SharePrefUtil.putString(Conast.TELETEXT_CONSULT,value);
+				}
+				else if(vb.getSKEY().equals("VAR_20003")){
+					SharePrefUtil.putString(Conast.PEOPLE_DOCTOR,value);
+				}
+			}
 			break;
 		case EXEU_GET_DATA:
 			NewsEntity entity = (NewsEntity) msg.obj;
@@ -515,12 +553,12 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 	private void getHomeNews() {
 
 		try {
-			Thread.sleep(5000);
+			// Thread.sleep(5000);
 			Message message = new Message();
 			message.obj = null;
 			message.what = EXEU_GET_DATA;
 			handler.sendMessage(message);
-		} catch (InterruptedException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -565,14 +603,23 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 						if (null != response) {
 							NewsTypeInfo respEntry = (NewsTypeInfo) response;
 							if (respEntry.getSuccess() == 1) {
-								List<NewsTypeEntry> typsList = respEntry
+								final List<NewsTypeEntry> typsList = respEntry
 										.getData();
 								// 保存资讯目录
-								NewsTypeTable table = new NewsTypeTable();
-								table.clearTable();
-								for (int i = 0; i < typsList.size(); i++) {
-									table.saveNewsType(typsList.get(i));
-								}
+								new Thread() {
+									@Override
+									public void run() {
+										// TODO Auto-generated method stub
+										super.run();
+										NewsTypeTable table = new NewsTypeTable();
+										table.clearTable();
+										for (int i = 0; i < typsList.size(); i++) {
+											table.saveNewsType(typsList.get(i));
+										}
+									}
+
+								}.start();
+
 							}
 						}
 					}
@@ -587,17 +634,17 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 	@Override
 	public void onClick(View v) {
 		Intent intent = null;
-//		if(v.getId()==R.id.et_disease_keyword){
-//			intent = new Intent(activity, SearchResourceActivity.class);
-//			startActivity(intent);
-//		}
+		// if(v.getId()==R.id.et_disease_keyword){
+		// intent = new Intent(activity, SearchResourceActivity.class);
+		// startActivity(intent);
+		// }
 		if (et_disease_keyword.isFocused()
 				&& activity.getWindow().getAttributes().softInputMode == WindowManager.LayoutParams.SOFT_INPUT_STATE_UNSPECIFIED) {
 			bt_keyword_search.setPressed(true);
 		} else {
 			bt_keyword_search.setPressed(false);
 		}
-		
+
 		if (v.getId() == R.id.bt_keyword_search) {
 
 			if (TextUtils.isEmpty(et_disease_keyword.getText().toString()
@@ -632,12 +679,12 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 			intent.putExtra("current_name", "预约加号");
 			startActivity(intent);
 		}
-//		else if (v.getId() == R.id.ll_shangmen_top) {
-//			intent = new Intent(activity, ExpertSearchActivity.class);
-//			intent.putExtra("current_service", "4");
-//			intent.putExtra("current_name", "上门会诊");
-//			startActivity(intent);
-//		}
+		// else if (v.getId() == R.id.ll_shangmen_top) {
+		// intent = new Intent(activity, ExpertSearchActivity.class);
+		// intent.putExtra("current_service", "4");
+		// intent.putExtra("current_name", "上门会诊");
+		// startActivity(intent);
+		// }
 		else if (v.getId() == R.id.ll_zhuyuan_top) {
 			intent = new Intent(activity, ExpertSearchActivity.class);
 			intent.putExtra("current_service", "14");
@@ -662,17 +709,18 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 		}
 
 		else if (v.getId() == R.id.ll_free_question) {
-			
-			if(SharePrefUtil.getBoolean(Conast.LOGIN)){
+
+			if (SharePrefUtil.getBoolean(Conast.LOGIN)) {
 				intent = new Intent(activity, PutQuestionsActivity.class);
 				startActivity(intent);
-			}else{
+			} else {
 				intent = new Intent(activity, LoginActivity.class);
-				intent.putExtra("origin", PutQuestionsActivity.class.getSimpleName());
+				intent.putExtra("origin",
+						PutQuestionsActivity.class.getSimpleName());
 				intent.putExtra("current_service", "17");
 				startActivity(intent);
 			}
-			
+
 		}
 
 		/*
@@ -684,18 +732,19 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 			startActivity(intent);
 		} else if (v.getId() == R.id.ll_yongyao_top) {
 			intent = new Intent(activity, WebViewThirdServiceActivity.class);
-			//自动登录
 			// intent.putExtra("url", "http://10.18.0.26:80/splash?r=/drug");
 			// intent.putExtra("url", "http://plus.ememed.net/splash?r=/drug");
+			// intent.putExtra("url", "http://plus.ememed.net/drug");
+//			intent.putExtra("url", "http://172.16.0.63/drug3/");
 			intent.putExtra("url", "http://plus.ememed.net/drug");//正式服务器地址
+//			intent.putExtra("url", "http://plus.ememed.net/drug");//正式服务器地址
 //			intent.putExtra("url", "http://172.16.0.63/drug3/");//内网测试服务器
-//			intent.putExtra("url", "http://10.18.0.236/drug3/");//内网个人测试
+			intent.putExtra("url", HttpUtil.DRUG_URL);
 			intent.putExtra("ServiceList", serviceContent);
 			if (UserPreferenceWrapper.isLogin()) 
 				intent.putExtra("accesskey", UserPreferenceWrapper.getAccessKey());
 			startActivity(intent);
 		}
-		
 
 	}
 
@@ -719,60 +768,87 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 			params.add(new BasicNameValuePair("Channel", "android"));// 新增
 			String content = HttpUtil.getString(HttpUtil.URI
 					+ HttpUtil.sync_config, params, HttpUtil.POST);
-			content = TextUtil.substring(content, "{");
-			if (content != null) {
-				JSONObject obj = new JSONObject(content);
-				JSONObject resultObj = obj.getJSONObject("data");
 
-				JSONObject roomsObj = resultObj.getJSONObject("rooms");
-				ConfigTable configTable = new ConfigTable();
-				configTable.clearTable();
-				Iterator arrays = roomsObj.keys();
-				String keyName = "";
-				String keyValue = "";
-				while (arrays.hasNext()) {
-					keyName = arrays.next().toString();
-					Logger.dout("keyName:" + keyName);
-					JSONArray roomArray = roomsObj.getJSONArray(keyName);
-					for (int i = 0; i < roomArray.length(); i++) {
-						Logger.dout("keyValue:" + roomArray.getString(i));
-						keyValue = roomArray.getString(i);
-						configTable.saveDepartment(keyName, keyValue);
-					}
-				}
-				/***** 无耻的分割线 获取服务 ***/
-				JSONObject positionObj = resultObj.getJSONObject("service");
-				if (null != positionObj) {
-					ServiceConfigTable serviceTable = new ServiceConfigTable();
-					serviceTable.clearTable();
-					Iterator serviceArrays = positionObj.keys();
-					String servicekeyValue = "";
-					String servicekeyName = "";
-					while (serviceArrays.hasNext()) {
-						Logger.dout("servicekeyValue:" + servicekeyValue);
-						Logger.dout("servicekeyName:" + servicekeyName);
-						servicekeyName = serviceArrays.next().toString();
-						servicekeyValue = positionObj.getString(servicekeyName);
-						serviceTable.savePositionName(servicekeyName,
-								servicekeyValue);
-					}
-				}
-				/***** 无耻的分割线 获取排序列表 ***/
-				JSONObject orderObj = resultObj.getJSONObject("orderby");
-				if (null != orderObj) {
-					SortConfigTable sortTable = new SortConfigTable();
-					sortTable.clearTable();
-					Iterator sortArrays = orderObj.keys();
-					String sortValue = "";
-					String sortId = "";
-					while (sortArrays.hasNext()) {
-						Logger.dout("sortValue:" + sortValue);
-						Logger.dout("sortName:" + sortId);
-						sortId = sortArrays.next().toString();
-						sortValue = orderObj.getString(sortId);
-						sortTable.saveSortName(sortId, sortValue);
-					}
-				}
+			final String content_1 = TextUtil.substring(content, "{");
+			if (content != null) {
+
+				new Thread() {
+
+					public void run() {
+
+						try {
+
+							JSONObject obj = new JSONObject(content_1);
+							JSONObject resultObj = obj.getJSONObject("data");
+							JSONObject roomsObj = resultObj
+									.getJSONObject("rooms");
+							ConfigTable configTable = new ConfigTable();
+							configTable.clearTable();
+							Iterator arrays = roomsObj.keys();
+							String keyName = "";
+							String keyValue = "";
+							while (arrays.hasNext()) {
+								keyName = arrays.next().toString();
+								Logger.dout("keyName:" + keyName);
+								JSONArray roomArray = roomsObj
+										.getJSONArray(keyName);
+								for (int i = 0; i < roomArray.length(); i++) {
+									Logger.dout("keyValue:"
+											+ roomArray.getString(i));
+									keyValue = roomArray.getString(i);
+									configTable.saveDepartment(keyName,
+											keyValue);
+								}
+							}
+							/***** 无耻的分割线 获取服务 ***/
+							JSONObject positionObj = resultObj
+									.getJSONObject("service");
+							if (null != positionObj) {
+								ServiceConfigTable serviceTable = new ServiceConfigTable();
+								serviceTable.clearTable();
+								Iterator serviceArrays = positionObj.keys();
+								String servicekeyValue = "";
+								String servicekeyName = "";
+								while (serviceArrays.hasNext()) {
+									Logger.dout("servicekeyValue:"
+											+ servicekeyValue);
+									Logger.dout("servicekeyName:"
+											+ servicekeyName);
+									servicekeyName = serviceArrays.next()
+											.toString();
+									servicekeyValue = positionObj
+											.getString(servicekeyName);
+									serviceTable.savePositionName(
+											servicekeyName, servicekeyValue);
+								}
+							}
+							/***** 无耻的分割线 获取排序列表 ***/
+							JSONObject orderObj = resultObj
+									.getJSONObject("orderby");
+							if (null != orderObj) {
+								SortConfigTable sortTable = new SortConfigTable();
+								sortTable.clearTable();
+								Iterator sortArrays = orderObj.keys();
+								String sortValue = "";
+								String sortId = "";
+								while (sortArrays.hasNext()) {
+									Logger.dout("sortValue:" + sortValue);
+									Logger.dout("sortName:" + sortId);
+									sortId = sortArrays.next().toString();
+									sortValue = orderObj.getString(sortId);
+									sortTable.saveSortName(sortId, sortValue);
+								}
+							}
+
+						} catch (Exception e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+
+					};
+
+				}.start();
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -868,6 +944,9 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 					content = HttpUtil.getString(HttpUtil.GET_HOME_ADS, null,
 							HttpUtil.POST);
 					content = TextUtil.substring(content, "{");
+					
+					System.out.println("广告内容content = "+content);
+					
 					Gson gson = new Gson();
 					HomeAdsInfo info = gson
 							.fromJson(content, HomeAdsInfo.class);
@@ -918,47 +997,10 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 
 	private void initItem(int i) {
 
-		// if(i == 0) { //本地广告单独处理
-		// View view = View.inflate(activity.getApplicationContext(),
-		// R.layout.view_local_ad, null);
-		// Button btn_free_consult = (Button)
-		// view.findViewById(R.id.btn_free_consult);
-		// RelativeLayout rl_home_pic = (RelativeLayout)
-		// view.findViewById(R.id.rl_home_pic);
-		//
-		// rl_home_pic.setOnClickListener(new OnClickListener() {
-		//
-		// @Override
-		// public void onClick(View v) {
-		// UICore.eventTask(HomeFragment.this, activity, EXEU_SYS_DATA, null,
-		// null);//加载数据入口
-		// Intent intent = new Intent(activity, ExpertSearchActivity.class);
-		// intent.putExtra("current_service", "1");
-		// intent.putExtra("current_name", "图文咨询");
-		// startActivity(intent);
-		// }
-		// });
-		//
-		// btn_free_consult.setOnClickListener(new OnClickListener() {
-		//
-		// @Override
-		// public void onClick(View v) {
-		// UICore.eventTask(HomeFragment.this, activity, EXEU_SYS_DATA, null,
-		// null);//加载数据入口
-		// Intent intent = new Intent(activity, ExpertSearchActivity.class);
-		// intent.putExtra("current_service", "1");
-		// intent.putExtra("current_name", "图文咨询");
-		// startActivity(intent);
-		// }
-		// });
-		// views.add(view);
-		// }
-		// else { //获取的广告
 		final AdsEntry adsEntry = data.get(i);
 		View view = View.inflate(activity.getApplicationContext(),
 				R.layout.item_ads, null);
 		view.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(activity, WebViewActivity.class);
@@ -1126,10 +1168,49 @@ public class HomeFragment extends Fragment implements BasicUIEvent, Callback,
 			}
 		}
 	}
+	
+	private void getIntroduceList(){
+		if (!NetWorkUtils.detect(activity)) {
+			handler.sendEmptyMessage(IResult.NET_ERROR);
+			return;
+		}
+		activity.loading(null);
+		HashMap<String, String> params = new HashMap<String, String>();
+		params.put("token", SharePrefUtil.getString(Conast.ACCESS_TOKEN));
+		params.put("memberid", SharePrefUtil.getString(Conast.MEMBER_ID));
+		params.put("utype", "user");
+		params.put("appversion", AppUtils.getVersionName(activity));
+		params.put("channel", "android");
+		System.out.println("token--"+SharePrefUtil.getString(Conast.ACCESS_TOKEN)+"--memberid--"+SharePrefUtil.getString(Conast.MEMBER_ID)+
+				"--utype--"+"user"+"--appversion--"+AppUtils.getVersionName(activity)+"--channel--"+"android");
+		MyApplication.volleyHttpClient.postWithParams(HttpUtil.get_static_variable, StaticVariableBean.class, params,new Listener() {
+
+			@Override
+			public void onResponse(Object response) {
+				// TODO Auto-generated method stub
+				Message msg = handler
+						.obtainMessage();
+				msg.obj = response;
+				msg.what = IResult.GET_STATIC_VARIABLE;
+				handler.sendMessage(msg);
+			}
+		},new ErrorListener() {
+
+			@Override
+			public void onErrorResponse(VolleyError response) {
+				// TODO Auto-generated method stub
+				Message msg = handler
+						.obtainMessage();
+				msg.obj = response;
+				msg.what = IResult.DATA_ERROR;
+				handler.sendMessage(msg);
+			}
+		});
+	}
 
 	private void getServiceListFromNet() {
 		if (NetWorkUtils.detect(activity)) {
-			activity.loading(null);
+//			activity.loading(null);
 
 			try {
 				HashMap<String, String> params = new HashMap<String, String>();

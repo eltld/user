@@ -29,7 +29,7 @@
         android:layout_below="@id/tv_title"
         android:layout_marginBottom="32dp"
         android:lineSpacingExtra="8dp"
-        android:text="今日“免费提问”的机会已经用完，如果你需要更专业细致的问诊服务，建议你使用图文咨询。"
+        android:text=""
         android:textColor="#666666"
         android:textSize="15sp" />
 

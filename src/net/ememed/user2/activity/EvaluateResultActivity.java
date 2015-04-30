@@ -130,13 +130,11 @@ public class EvaluateResultActivity extends BasicActivity {
 			case IResult.BAIKE_ADD_ATTENTION:
 				destroyDialog();
 				BaikeFansEntry entry = (BaikeFansEntry) msg.obj;
+				showToast(entry.getErrormsg());
 				if (1 == entry.getSuccess()) {
-					showToast("添加关注成功");
 					btn_follow.setText("已关注");
 					btn_follow.setEnabled(false);
-				} else {
-					showToast("添加关注失败，请稍后再试");
-				}
+				} 
 				break;
 			default:
 				break;

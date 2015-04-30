@@ -419,7 +419,7 @@ public class PutQuestionsActivity extends BasicActivity implements DownloadState
 							startActivity(xq_intent);
 							finish();
 						} else {
-							showFreeQuestionInvalidDialog();
+							showFreeQuestionInvalidDialog(entry.getErrormsg());
 						}
 
 					}
@@ -435,10 +435,11 @@ public class PutQuestionsActivity extends BasicActivity implements DownloadState
 	}
 
 	private AlertDialog mFreeQuestionInvalidDialog;
-
-	private void showFreeQuestionInvalidDialog() {
+	private TextView tv_tips;
+	private void showFreeQuestionInvalidDialog(String tips) {
 		if (mFreeQuestionInvalidDialog == null) {
 			View dialogView = getLayoutView(R.layout.dialog_free_question_invalid);
+			tv_tips = (TextView) dialogView.findViewById(R.id.tv_tips);
 			View btn_last = dialogView.findViewById(R.id.btn_last);
 			View btn_see = dialogView.findViewById(R.id.btn_see);
 			btn_last.setOnClickListener(new OnClickListener() {
@@ -462,6 +463,7 @@ public class PutQuestionsActivity extends BasicActivity implements DownloadState
 			});
 			mFreeQuestionInvalidDialog = new AlertDialog.Builder(this).setView(dialogView).create();
 		}
+		tv_tips.setText(tips);
 		mFreeQuestionInvalidDialog.show();
 	}
 

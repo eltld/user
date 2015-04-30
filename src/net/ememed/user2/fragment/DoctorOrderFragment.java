@@ -78,6 +78,7 @@ public class DoctorOrderFragment extends Fragment implements Handler.Callback, O
 	private RefreshListView list_view;
 	private ContactAdapter adapter;
 	private List<OrderListEntry> listItems;
+	private boolean refresh = true;
 	private int totalpages = 1;
 	private int page = 1;
 	private String tochat_userId;
@@ -226,6 +227,21 @@ public class DoctorOrderFragment extends Fragment implements Handler.Callback, O
 	}
 
 	@Override
+	public void onResume() {
+		autoRefresh();
+
+		super.onResume();
+	}
+
+	private void autoRefresh() {
+		
+		refresh = true;
+		page = 1;
+		getDoctorOrderList(page,false);
+	
+	}
+
+	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		// System.out.println("TestFragment onSaveInstanceState fragmentKey : "+
@@ -233,11 +249,13 @@ public class DoctorOrderFragment extends Fragment implements Handler.Callback, O
 	}
 
 	public void refresh() {
+		refresh = true;
 		page = 1;
 		getDoctorOrderList(page);
 	}
 
 	protected void loadMore() {
+		refresh = false;
 		page++;
 		getDoctorOrderList(page);
 	}
@@ -310,7 +328,7 @@ public class DoctorOrderFragment extends Fragment implements Handler.Callback, O
 					if (olEntity.getSuccess() == 1) {
 						init = true;
 						if (null != olEntity.getData() && olEntity.getData().size() > 0) {
-							if (page == 1) {
+							if (refresh) {
 								adapter.change(olEntity.getData());
 							} else {
 								adapter.add(olEntity.getData());

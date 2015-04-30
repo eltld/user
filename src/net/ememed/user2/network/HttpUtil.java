@@ -47,6 +47,9 @@ public class HttpUtil {
 //	public static final String URI =  "http://183.60.177.178:9004";//测试环境
 //	public static final String URI =  "http://www.ememed.net:9004";//测试环境
 	public static final String URI =  "http://www.ememed.net:8004";//正式环境
+	
+//	public static final String DRUG_URL = "http://172.16.0.63/drug3/";//用药助手入口,内网测试服务器
+	public static final String DRUG_URL = "http://plus.ememed.net/drug";//用药助手入口,正式服务器
 
 	public static final String URI_USER = URI + "/user/";
 	public static final String PRODUCT_URI = "http://121.8.142.242:6677/android/ProductDetail.aspx?id=";
@@ -62,6 +65,7 @@ public class HttpUtil {
 	
 	public static final String get_version_info = "/normal/common/get_version_info";
 	public static final String check_mobile_code = "/normal/common/check_mobile_code";
+	public static final String get_static_variable="/normal/common/get_static_variable";  //服务介绍列表
 	
 	public static final String search_filter_doctor = "/normal/user/search_filter_doctor";
 	public static final String get_news_list = "/normal/common/get_news_list";

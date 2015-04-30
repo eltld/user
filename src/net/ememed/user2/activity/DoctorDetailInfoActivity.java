@@ -464,8 +464,14 @@ public class DoctorDetailInfoActivity extends BasicActivity implements
 
 	@Override
 	protected void onResume() {
+		// TODO Auto-generated method stub
 		super.onResume();
 		setRedShow();
+		getMemberInfo(false);
+		if (mOrderFragment != null)
+			mOrderFragment.refresh();
+		
+
 	}
 
 	@Override
@@ -561,9 +567,9 @@ public class DoctorDetailInfoActivity extends BasicActivity implements
 		mViewPager.setAdapter(mPagerAdapter);
 		mViewPager.setOnPageChangeListener(this);// 设置监听
 		
-		getMemberInfo(false);
-		if (mOrderFragment != null)
-			mOrderFragment.refresh();
+		
+		
+		
 	}
 
 	public void doClick(View view) {

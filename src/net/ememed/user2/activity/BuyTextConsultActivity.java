@@ -386,7 +386,7 @@ public class BuyTextConsultActivity extends BasicActivity implements
 
 			photoUri = Uri.fromFile(picFile);
 			intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, photoUri);
-			intent.putExtra("return-data", true);
+//			intent.putExtra("return-data", true);
 			startActivityForResult(intent, REQUEST_CODE_TAKE_PICTURE);
 		} catch (ActivityNotFoundException e) {
 			// Log.d(TAG, "cannot take picture", e);

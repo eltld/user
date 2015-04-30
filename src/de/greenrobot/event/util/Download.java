@@ -67,7 +67,6 @@ public class Download implements Serializable {
 		mLocalPath = Environment.getExternalStorageDirectory()
 				.getAbsolutePath()
 				+ "/Android/data/net.ememed.user2/ememed#ememeduserofficial/"+userid;
-		
 	}
 
 	public void setParameters(OnDownloadListener listener) {

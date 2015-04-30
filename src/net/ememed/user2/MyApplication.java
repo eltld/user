@@ -77,6 +77,7 @@ public class MyApplication extends Application{
 	public static String WECHAT_SHARE_SUCCESS = "wechat_share_success";
 	public static String GET_CONTACT_LIST = "get_contact_list";
 	public static String GET_BOUNTY_LIST = "get_bounty_list";
+	public static String pathName = null;
 	
 	public static String current_city = "广州市";//
 	

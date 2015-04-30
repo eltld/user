@@ -65,6 +65,13 @@ public class Conast {
 	public static final String PRE_LOACTION_TIME = "loaction_time";	//上一次定位的时间
 	public static final String CITY_ID = "cityid";	//城市ID
 	public static final String CITY_NAME = "cityname";	//城市名
+	
+	public static final String ORDER_CALL="order_call";
+	public static final String ORDER_ADD_NULBER="order_add_number";
+	public static final String ORDER_HOSPITAL="order_hospital";
+	public static final String FREE_CHAR="free_chat";
+	public static final String TELETEXT_CONSULT="teletext_consult";
+	public static final String PEOPLE_DOCTOR="people_doctor";
 	//public static final String CURRENT_CITY = "current_city";		//当前城市
 	//public static final String PRE_LOACTION_TIME = "pre_location_time";	//上一次定位的时间
 	

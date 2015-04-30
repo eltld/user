@@ -124,4 +124,6 @@ public interface IResult {
 	//修改手机号
 	public static final int ALERT_MOBILE = 300;
 	
+	public static final int GET_STATIC_VARIABLE=400;  //服务介绍
+	
 }

@@ -1157,12 +1157,19 @@ public class MicroChatFragment extends Fragment implements Handler.Callback,
 	private void resendMessage() {
 
 		EMMessage msg = null;
-		msg = conversation.getMessage(resendPos);
-		// msg.setBackSend(true);
-		msg.status = EMMessage.Status.CREATE;
 		
-		adapter.refresh();
-		listView.setSelection(resendPos);
+		System.out.println("resendPos!!! = " +resendPos );
+		
+//		msg = conversation.getMessage(resendPos);
+		
+		if(adapter!=null){
+			msg = adapter.getItem(resendPos);
+			// msg.setBackSend(true);
+			msg.status = EMMessage.Status.CREATE;
+			adapter.refresh();
+			listView.setSelection(resendPos);
+		}
+		
 
 	}
 
@@ -1863,6 +1870,14 @@ public class MicroChatFragment extends Fragment implements Handler.Callback,
 		}
 	}
 	
+	@Override
+	public void onDestroyView() {
+		// TODO Auto-generated method stub
+		super.onDestroyView();
+		if(conversation!=null){
+			conversation.resetUnsetMsgCount();
+		}
+	}
 	
 	private String toStringJSON(String doctor,String user){
 		

@@ -40,10 +40,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.location.Criteria;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -65,7 +61,6 @@ import cn.sharesdk.sina.weibo.SinaWeibo;
 import cn.sharesdk.tencent.qq.QQ;
 import cn.sharesdk.wechat.friends.Wechat;
 
-import com.baidu.location.BDLocation;
 import com.easemob.EMConnectionListener;
 import com.easemob.EMError;
 import com.easemob.chat.EMChatManager;
@@ -74,8 +69,6 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.umeng.analytics.MobclickAgent;
 
-import de.greenrobot.event.util.BDLocationCallback;
-import de.greenrobot.event.util.BDLocationTool;
 import de.greenrobot.event.util.IMManageTool;
 import eu.janmuller.android.simplecropimage.CropImage;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
@@ -642,7 +635,11 @@ public class BasicActivity extends FragmentActivity implements BasicUIEvent {
 			switch (requestCode) {
 			// 获取打开相机的图片
 			case REQUEST_CODE_TAKE_PICTURE:
-				onCameraPath(picFile.getAbsolutePath());
+				if(MyApplication.pathName!=null){
+					onCameraPath(((MyApplication)getApplication()).pathName);
+				}else{
+					showToast("系统错误,请测试");
+				}
 				break;
 			// 获取打开图库的数据
 			case REQUEST_CODE_GALLERY:
@@ -948,6 +945,10 @@ public class BasicActivity extends FragmentActivity implements BasicUIEvent {
 	public static final int REQUEST_CODE_CROP_IMAGE = 4;
 	public File picFile;
 	public Uri photoUri;
+	
+	
+	
+	
 
 	/**
 	 * 打开图库
@@ -998,10 +999,9 @@ public class BasicActivity extends FragmentActivity implements BasicUIEvent {
 				picFile = new File(this.getFilesDir() + FileUtil.ROOT_DIRECTORY + "/"
 						+ FileUtil.IMG_UPLOAD, UUID.randomUUID().toString() + ".jpeg");
 			}
-
+			MyApplication.pathName = picFile.getAbsolutePath();
 			photoUri = Uri.fromFile(picFile);
 			intent.putExtra(android.provider.MediaStore.EXTRA_OUTPUT, photoUri);
-			intent.putExtra("return-data", true);
 			startActivityForResult(intent, REQUEST_CODE_TAKE_PICTURE);
 		} catch (ActivityNotFoundException e) {
 			// Log.d(TAG, "cannot take picture", e);

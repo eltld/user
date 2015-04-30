@@ -73,7 +73,7 @@ public class RegisterByMobileActivity extends BasicActivity {
 	private ImageView iv_show_pswd;
 	private boolean isShowingPwd;
 	private Button btn_register;
-	private EditText et_invite;
+//	private EditText et_invite;
 
 	@Override
 	protected void onCreateContent(Bundle savedInstanceState) {
@@ -90,7 +90,7 @@ public class RegisterByMobileActivity extends BasicActivity {
 		et_userName = (EditText) findViewById(R.id.et_account);
 		et_password = (EditText) findViewById(R.id.et_pwd);
 		et_checkCode = (EditText) findViewById(R.id.et_verify_code);
-		et_invite = (EditText) findViewById(R.id.et_invite);
+//		et_invite = (EditText) findViewById(R.id.et_invite);
 		btn_checkCode = (Button) findViewById(R.id.btn_second);
 		btn_register = (Button) findViewById(R.id.btn_register);
 		tv_protocol = (TextView) findViewById(R.id.tv_protocol);
@@ -249,12 +249,12 @@ public class RegisterByMobileActivity extends BasicActivity {
 
 		String pwd = et_password.getText().toString().trim();
 		String mobile = et_userName.getText().toString().trim();
-		String invite = et_invite.getText().toString().trim();
+//		String invite = et_invite.getText().toString().trim();
 
 		HashMap<String, String> params = new HashMap<String, String>();
 		params.put("mobile", mobile);
 		params.put("strpwd", pwd);
-		params.put("invite_number", invite);
+		params.put("invite_number", /*invite*/"");
 		params.put("channel", "Android");
 		params.put("appversion", PublicUtil.getVersionName(this));
 

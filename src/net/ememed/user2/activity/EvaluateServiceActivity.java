@@ -54,7 +54,7 @@ public class EvaluateServiceActivity extends BasicActivity {
 	}
 
 	public void requestSaveEvaluation() {
-		String starNum = String.valueOf(mRatingBar.getRating());
+		String starNum = String.valueOf(mRatingBar.getRating() * 2);
 		String comment = et_comment.getText().toString();
 		
 		if (TextUtils.isEmpty(comment)) {

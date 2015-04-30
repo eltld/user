@@ -100,6 +100,7 @@
 
             <net.ememed.user2.widget.ListViewForScrollView
                 android:id="@+id/pic_list"
+                android:divider="@null"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
             </net.ememed.user2.widget.ListViewForScrollView>
